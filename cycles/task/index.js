@@ -1,24 +1,26 @@
 // В данных задачах старайтесь не использовать методы массивов.Используйте циклы и условия.
-
 // Вопросы к этому заданию
-
 // На основе строки“ i am in the easycode” сделать новую строку где первые буквы каждого слова будут в верхнем регистре.Использовать for или while.
 
 let str = 'i am in the easycode';
-
+let res = '';
 for (let i = 0; i < str.length; i++) {
-
-  if (str[i] === ' ') {
-    console.log(str[++i].toUpperCase());
+  if(i === 0 || str[i - 1] === ' ') {
+    res += str[i].toUpperCase();
+  } else {
+    res += str[i];
   }
 }
-
-
-
+console.log(res);
 
 
 
 // Дана строка“ tseb eht ma i”.Используя циклы, сделать строку - перевертыш(то есть последняя буква становится первой, предпоследняя - второй итд).
+let str2 = 'tseb eht ma i';
+let res2 = '';
+for (let i = str2.length; i > 0; i--) {
+  
+}
 
 
 

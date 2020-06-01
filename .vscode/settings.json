@@ -1,0 +1,5 @@
+{
+    "workbench.colorTheme": "Monokai Pro",
+    "prettier.singleQuote": true,
+    "files.autoSave": "onFocusChange"
+}
