@@ -92,34 +92,33 @@ const users = [
     age: 46
   }
 ]
-
+// console.log(users);
 const usersObj = {};
 
 // for (k = 0; k < users.length; k++) {
-//   console.log(users[k].name);
+//   console.log(users[k].age);
 // }
 
 
-for (f = 0; f < users.length; f++) {
-  usersObj[users[f].name] = users[f];
-}
+// for (f = 0; f < users.length; f++) {
+//   usersObj[users[f].name] = users[f];
+// }
 
-console.log(usersObj['Oleg']);
-
+// console.log(usersObj['Oleg']);
 
 
 
 
 // for in
-const usersIn = {
-  name: 'Vovka',
-  age: 35
-};
-// слово key можно заменить на любое другое
-for (let key in usersIn) {
-  console.log(key);
-  console.log(usersIn[key]);
-}
+// const usersIn = {
+//   name: 'Vovka',
+//   age: 35
+// };
+// // слово key можно заменить на любое другое
+// for (let key in usersIn) {
+//   // console.log(key);
+//   console.log(usersIn[key]);
+// }
 
 
 
