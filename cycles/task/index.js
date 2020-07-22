@@ -4,12 +4,12 @@
 
 let str = 'i am in the easycode';
 let res = '';
-for (let i = 0; i < str.length; i++) {
-  // if(i === 0 || str[i - 1] === ' ') {
-  //   res += str[i].toUpperCase();
-  // } else {
-  //   res += str[i];
-  // }
+// for (let i = 0; i < str.length; i++) {
+// if(i === 0 || str[i - 1] === ' ') {
+//   res += str[i].toUpperCase();
+// } else {
+//   res += str[i];
+// }
 //   res = (i === 0 || str[i - 1] === ' ') ? res += str[i].toUpperCase() : res += str[i];
 // }
 // console.log(res);
@@ -52,24 +52,28 @@ for (let i = 0; i < str.length; i++) {
 
 
 // Найти все нечетные числа в массиве от 1 до 15 включительно и вывести их в консоль.Массив[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] Использовать for of.
-
-
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+let oddNum = [];
+for (let num of arr) {
+  if (num % 2 !== 0) {
+    oddNum.push(num);
+  }
+}
+console.log(oddNum);
 
 
 
 // Дан объект:
-
 //   let list = {
-
 //     name: ‘denis’,
-
 //     work: ‘easycode’,
-
 //     age: 29
-
 //   }
+// Перебрать объект и если значение в свойстве это строка то переписать ее всю в верхнем регистре.Использовать for in .
+let list = {
+  name: 'denis',
+  work: 'easycode',
+  age: 29
+}
 
-
-
-// Перебрать объект и если значение в свойстве это строка то переписать ее всю в верхнем регистре.Использовать
-// for in .
+for ()
