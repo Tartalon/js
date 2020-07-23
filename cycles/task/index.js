@@ -2,8 +2,8 @@
 // Вопросы к этому заданию
 // На основе строки“ i am in the easycode” сделать новую строку где первые буквы каждого слова будут в верхнем регистре.Использовать for или while.
 
-let str = 'i am in the easycode';
-let res = '';
+// let str = 'i am in the easycode';
+// let res = '';
 // for (let i = 0; i < str.length; i++) {
 // if(i === 0 || str[i - 1] === ' ') {
 //   res += str[i].toUpperCase();
@@ -43,8 +43,10 @@ let res = '';
 // for (let i = 0; i < str.length; i++) {
 //   if (str[i] === ' ') {
 //     continue;
+//   } else if (str[i - 1] === ' ') {
+//     newStr += str[i].toUpperCase();
 //   } else {
-//     newStr += str[i].toLowerCase();
+//     newStr += str[i];
 //   }
 // }
 // console.log(newStr);
@@ -52,14 +54,14 @@ let res = '';
 
 
 // Найти все нечетные числа в массиве от 1 до 15 включительно и вывести их в консоль.Массив[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] Использовать for of.
-let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-let oddNum = [];
-for (let num of arr) {
-  if (num % 2 !== 0) {
-    oddNum.push(num);
-  }
-}
-console.log(oddNum);
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+// let oddNum = [];
+// for (let num of arr) {
+//   if (num % 2 !== 0) {
+//     oddNum.push(num);
+//   }
+// }
+// console.log(oddNum);
 
 
 
@@ -70,10 +72,14 @@ console.log(oddNum);
 //     age: 29
 //   }
 // Перебрать объект и если значение в свойстве это строка то переписать ее всю в верхнем регистре.Использовать for in .
-let list = {
-  name: 'denis',
-  work: 'easycode',
-  age: 29
-}
+// let list = {
+//   name: 'denis',
+//   work: 'easycode',
+//   age: 29
+// }
 
-for ()
+// for (key in list) {
+//   if (typeof list[key] === 'string'){
+//     list[key] = list[key].toUpperCase();
+//   }
+// }
