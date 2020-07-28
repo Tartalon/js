@@ -25,16 +25,19 @@
 // reverseString(undefined); // denifednu
 // reverseString(); // denifednu
 
-// function reverseString(str) {
-//   let newStr = str.toString();
-
-//   console.log(newStr);
-// }
-
 function reverseString(str) {
-  newStr = str.toString();
-  return newStr;
+  let newStr = '';
+  for (let i = str.length - 1; i >= 0; i--) {
+    newStr += str[i];
+  }
+
+  console.log(newStr);
 }
+
+// function reverseString(str) {
+//   newStr = str.toString();
+//   return newStr;
+// }
 
 // reverseString('test');
 // reverseString('');
