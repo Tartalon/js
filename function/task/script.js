@@ -3,11 +3,42 @@
 // multiply(1,2,3) => результат 6 (1*2*3);
 // Если нет ни одного аргумента, вернуть ноль: multiply() // 0
 
-function multiply(arguments) {
-  if (!arguments) {
-    return 0;
-  } else {
-    return arguments.length;
-  }
+// function multiply() {
+//   let result = 1;
+//   if (!arguments.length) {
+//     result = 0;
+//   } else {
+//     for (let i = 0; i < arguments.length; i++) {
+//       result *= arguments[i];
+//     }
+//   }
+//   return result;
+// }
+// console.log(multiply(2, 4, 5, 6));
+
+
+
+// Создать функцию, которая принимает строку и возвращает строку-перевертыш:
+// reverseString('test'); // 'tset'
+// reverseString(''); // ''
+// reverseString(null); // llun
+// reverseString(undefined); // denifednu
+// reverseString(); // denifednu
+
+// function reverseString(str) {
+//   let newStr = str.toString();
+
+//   console.log(newStr);
+// }
+
+function reverseString(str) {
+  newStr = str.toString();
+  return newStr;
 }
-console.log(multiply(1, 2, 3));
+
+// reverseString('test');
+// reverseString('');
+// reverseString(null);
+// reverseString(undefined);
+// reverseString();
+console.log(reverseString(1234));
