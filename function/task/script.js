@@ -26,12 +26,12 @@
 // reverseString(); // denifednu
 
 function reverseString(str) {
-  let newStr = '';
-  for (let i = str.length - 1; i >= 0; i--) {
-    newStr += str[i];
+  let newStr = String(str);
+  let revStr = '';
+  for (let i = newStr.length - 1; i >= 0; i--) {
+    revStr += newStr[i];
   }
-
-  console.log(newStr);
+  console.log(revStr);
 }
 
 // function reverseString(str) {
@@ -44,4 +44,4 @@ function reverseString(str) {
 // reverseString(null);
 // reverseString(undefined);
 // reverseString();
-console.log(reverseString(1234));
+console.log(reverseString(''));
