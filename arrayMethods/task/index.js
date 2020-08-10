@@ -26,17 +26,17 @@
 // Создать функцию, которая принимает произвольное(любое) число массивов и удаляет из каждого массива первый элемент, а возвращает массив из оставшихся значений.
 // changeCollection([1, 2, 3], [‘a’, ’b’, ‘c’]) // [ [2,3], [‘b’, ‘c’] ]
 // Не забудьте про проверкку того что массив является массивом.Это можно сделать с помощью метода Array.isArray(arr);
-function changeCollection() {
-  const res = [];
-  for (let i = 0; i < arguments.length; i++) {
-    if (Array.isArray(arguments[i])) {
-      arguments[i].shift();
-      res.push(arguments[i]);
-    }
-  }
-  return res;
-}
-console.log(changeCollection([1, 2, 3], ['a', 'b', 'c']));
+// function changeCollection() {
+//   const res = [];
+//   for (let i = 0; i < arguments.length; i++) {
+//     if (Array.isArray(arguments[i])) {
+//       arguments[i].shift();
+//       res.push(arguments[i]);
+//     }
+//   }
+//   return res;
+// }
+// console.log(changeCollection([1, 2, 3], ['a', 'b', 'c']));
 
 // function changeCollection() {
 //   const res = [];
@@ -82,7 +82,11 @@ const users = [{
 
 
 function filterUsers(arr, key, value) {
-
+  if (!Array.isArray(arr)) return new Error('The first argument is not array');
+  if (typeof key !== 'string' || key === '') return new Error('Invalid key value');
+  
 }
 
-console.log(filterUsers(users, "age", 36))
+// console.log(filterUsers(users, "age", 36));
+
+console.log(filterUsers(users, "age", 36));
