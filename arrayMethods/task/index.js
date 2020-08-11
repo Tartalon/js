@@ -84,9 +84,16 @@ const users = [{
 function filterUsers(arr, key, value) {
   if (!Array.isArray(arr)) return new Error('The first argument is not array');
   if (typeof key !== 'string' || key === '') return new Error('Invalid key value');
-  
-}
+  if (value === undefined || value === null) return new Error('Invalid value');
 
-// console.log(filterUsers(users, "age", 36));
+  const res = [];
+
+  for (i = 0; i < arr.length; i++) {
+    if (arr[i][key] === value) {
+      res.push(arr[i])
+    }
+  }
+  return res;
+}
 
 console.log(filterUsers(users, "age", 36));
