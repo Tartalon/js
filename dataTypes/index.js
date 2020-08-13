@@ -81,17 +81,25 @@
 //   alert('Число НЕ палиндром');
 // }
 
-function palindrom(str) {
-  const len = Math.floor(str.length / 2);
-  for (let i = 0; i < len; i++) {
-    if (str[i] !== str[str.length - i -1]) {
-      return false;
-    }
-  }
-  return true;
-}
+// function palindrom(str) {
+//   const len = Math.floor(str.length / 2);
+//   for (let i = 0; i < len; i++) {
+//     if (str[i] !== str[str.length - i -1]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
 
 // Написать конвертор валют. Пользователь вводит количество USD, выбирает, в какую валюту хочет перевести EUR, UAN или AZN, и получает в ответ соответствующую сумму.
+const covertLab = document.querySelector('.covert-lab'),
+convertInp = document.querySelector('.convert-inp'),
+convertButton = document.querySelector('.convert-button');
+
+convertButton.addEventListener('click', (event) => {
+ event.preventDefault();
+//  if (convertInp.value === )
+})
 
 // Запросить у пользователя сумму покупки и вывести сумму к оплате со скидкой: от 200 до 300 – скидка будет 3%, от 300 до 500 – 5%, от 500 и выше – 7%.
 

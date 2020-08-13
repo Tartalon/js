@@ -1,0 +1,21 @@
+*{
+  margin: 0;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.main {
+  padding: 20px 0;
+}
+
+.convert-inp {
+  min-width: 150px;
+  min-height: 30px;
+}
+
+.convert-button {
+  min-width: 150px;
+  min-height: 30px;
+  background-color: #fff;
+  border: 1.5px solid black;
+}
