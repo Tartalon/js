@@ -94,12 +94,27 @@
 // Написать конвертор валют. Пользователь вводит количество USD, выбирает, в какую валюту хочет перевести EUR, UAN или AZN, и получает в ответ соответствующую сумму.
 const covertLab = document.querySelector('.covert-lab'),
 convertInp = document.querySelector('.convert-inp'),
-convertButton = document.querySelector('.convert-button');
+convertButton = document.querySelector('.convert-button'),
+answerSpan = document.querySelector('.answer__span'),
+err = document.querySelector('.error'),
+eur = document.querySelector('.eur'),
+uan = document.querySelector('.uan'),
+azn = document.querySelector('.azn');
 
 convertButton.addEventListener('click', (event) => {
- event.preventDefault();
-//  if (convertInp.value === )
-})
+  event.preventDefault();
+  err.textContent = '';
+ if (convertInp.value === '' || convertInp.value === '0') {
+   err.textContent = 'Error, Вы ввели не верное значение';
+   convertInp.value = '';
+ } else {
+  err.textContent = convertInp.value + 'usd';
+  eur.textContent = convertInp.value * 0.85;
+  uan.textContent = convertInp.value * 27.34;
+  azn.textContent = convertInp.value * 1.7;
+  convertInp.value = '';
+ }
+});
 
 // Запросить у пользователя сумму покупки и вывести сумму к оплате со скидкой: от 200 до 300 – скидка будет 3%, от 300 до 500 – 5%, от 500 и выше – 7%.
 

@@ -12,12 +12,19 @@
     <label for="convert" class="covert-lab">Введите сумму в долларах</label>
     <input type="number" class="convert-inp" id="convert-inp">
     <button class="convert-button">Расчитать</button>
-    <p class="answer">
+    <p class="error"></p>
+    <div class="box__answer">
+      <p class="answer">Сумма в евро</p>
       <span class="answer__span eur"></span>
-    </p>
-    <span class="answer__span uan"></span>
-    <span class="answer__span azn"></span>
-
+    </div>
+    <div class="box__answer">
+      <p class="answer">Сумма в гривне</p>
+      <span class="answer__span uan"></span>
+    </div>
+    <div class="box__answer">
+      <p class="answer">Сумма в манатах</p>
+      <span class="answer__span azn"></span>
+    </div>
   </main>
 
   <script src="./index.js"></script>
