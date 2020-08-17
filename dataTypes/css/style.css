@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0 15px;
   box-sizing: border-box;
@@ -8,12 +8,11 @@
   padding: 20px 0;
 }
 
-.convert-inp {
-  min-width: 150px;
-  min-height: 30px;
+.convert-wrapper {
+  margin-bottom: 30px;
 }
 
-.convert-button {
+.button {
   min-width: 150px;
   min-height: 30px;
   margin-bottom: 15px;
@@ -41,4 +40,9 @@
 .answer__span {
   min-width: 70px;
   border: 1px solid black;
+}
+
+.input {
+  min-width: 150px;
+  min-height: 30px;
 }
