@@ -46,17 +46,16 @@
     <!-- /.buy-wrapper -->
 
     <div class="perimeter__wrapper">
-      <label for="buy__inp" class="buy__lab">Введите сумму покупки</label>
-      <input type="number" class="input buy__inp" id="buy__inp" />
-      <label for="buy__inp" class="buy__lab">Введите сумму покупки</label>
-      <input type="number" class="input buy__inp" id="buy__inp" />
-      <button class="button buy__button">Расчитать</button>
-      <p class="error buy__error"></p>
+      <label class="perimeter__lab">Введите длину окружности
+        <input type="number" class="input perimeter__inp--square" />
+      </label>
+      <label class="perimeter__lab">Введите периметр квадрата
+        <input type="number" class="input perimeter__inp--circle" />
+      </label>
+      <button class="button perimeter__button">Расчитать</button>
+      <p class="error perimeter__error"></p>
       <div class="box__answer">
-        <p class="buy__answer">
-          К оплате:
-        </p>
-        <span class="answer__span buy__answer-span"></span>
+        <p class="perimeter__answer"></p>
       </div>
     </div>
     <!-- /.perimeter__wrapper -->

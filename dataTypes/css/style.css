@@ -50,3 +50,12 @@
 .buy-wrapper {
   padding: 20px 0;
 }
+
+.perimeter__wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.perimeter__lab {
+  margin-bottom: 15px;
+}

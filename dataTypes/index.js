@@ -140,7 +140,21 @@
 // });
 
 // Запросить у пользователя длину окружности и периметр квадрата. Определить, может ли такая окружность поместиться в указанный квадрат.
+const perimeterInpSquare = document.querySelector('.perimeter__inp--square'),
+  perimeterInpCircle = document.querySelector('.perimeter__inp--circle'),
+  perimeterButton = document.querySelector('.perimeter__button'),
+  perimeterAnswer = document.querySelector('.perimeter__answer');
 
+perimeterButton.addEventListener('click', (event) => {
+  const diameter = perimeterInpCircle.value / Math.PI,
+    length = perimeterInpSquare.value / 4;
+  event.preventDefault();
+  if (perimeterInpSquare.value === '' || perimeterInpSquare.value <= 0 || perimeterInpCircle.value === '' || perimeterInpCircle.value <= 0) {
+    perimeterAnswer.textContent = 'Не коректное значение';
+  }
+  
+  if ()
+});
 
 // Задать пользователю 3 вопроса, в каждом вопросе по 3 варианта ответа. За каждый правильный ответ начисляется 2 балла. После вопросов выведите пользователю количество набранных баллов.
 
