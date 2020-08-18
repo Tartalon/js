@@ -117,19 +117,30 @@
 // });
 
 // Запросить у пользователя сумму покупки и вывести сумму к оплате со скидкой: от 200 до 300 – скидка будет 3%, от 300 до 500 – 5%, от 500 и выше – 7%.
-const buyInp = document.querySelector('.buy__inp'),
-  buyButton = document.querySelector('.buy__button'),
-  answerSpan = document.querySelector('.answer__span'),
-  buyError = document.querySelector('.buy__error');
+// const buyInp = document.querySelector('.buy__inp'),
+//   buyButton = document.querySelector('.buy__button'),
+//   buyAnswerSpan = document.querySelector('.buy__answer-span'),
+//   buyError = document.querySelector('.buy__error');
 
-buyButton.addEventListener('click', (event) => {
-  event.preventDefault();
-  if (buyInp.value === '') {
-    buyError.textContent = 'Не верное значение';
-  }
-})
+// buyButton.addEventListener('click', (event) => {
+//   event.preventDefault();
+//   if (buyInp.value === '' || buyInp.value === '0') {
+//     buyError.textContent = 'Не верное значение';
+//   }
+//   if (buyInp.value < 200) {
+//     buyAnswerSpan.textContent = buyInp.value;
+//   } else if (buyInp.value < 300 && buyInp.value >= 200) {
+//     buyAnswerSpan.textContent = buyInp.value - (buyInp.value * 0.03);
+//   } else if (buyInp.value >= 300 && buyInp.value < 500) {
+//     buyAnswerSpan.textContent = buyInp.value - (buyInp.value * 0.05);
+//   } else if (buyInp.value >= 500) {
+//     buyAnswerSpan.textContent = buyInp.value - (buyInp.value * 0.07);
+//   }
+//   buyInp.value = '';
+// });
 
 // Запросить у пользователя длину окружности и периметр квадрата. Определить, может ли такая окружность поместиться в указанный квадрат.
+
 
 // Задать пользователю 3 вопроса, в каждом вопросе по 3 варианта ответа. За каждый правильный ответ начисляется 2 балла. После вопросов выведите пользователю количество набранных баллов.
 
