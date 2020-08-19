@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 .main {
   padding: 20px 0;
 }
@@ -54,8 +60,34 @@
 .perimeter__wrapper {
   display: flex;
   flex-direction: column;
+  margin-bottom: 30px;
 }
 
 .perimeter__lab {
   margin-bottom: 15px;
+}
+
+.f-question {
+  margin-bottom: 25px;
+}
+
+.f-question__checkbox {
+  margin-right: 15px;
+}
+
+.s-question {
+  margin-bottom: 25px;
+}
+
+.t-question {
+  margin-bottom: 25px;
+}
+
+.points__button {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.points__button:hover {
+  cursor: pointer;
 }

@@ -117,45 +117,59 @@
 // });
 
 // Запросить у пользователя сумму покупки и вывести сумму к оплате со скидкой: от 200 до 300 – скидка будет 3%, от 300 до 500 – 5%, от 500 и выше – 7%.
-// const buyInp = document.querySelector('.buy__inp'),
-//   buyButton = document.querySelector('.buy__button'),
-//   buyAnswerSpan = document.querySelector('.buy__answer-span'),
-//   buyError = document.querySelector('.buy__error');
+const buyInp = document.querySelector('.buy__inp'),
+  buyButton = document.querySelector('.buy__button'),
+  buyAnswerSpan = document.querySelector('.buy__answer-span'),
+  buyError = document.querySelector('.buy__error');
 
-// buyButton.addEventListener('click', (event) => {
-//   event.preventDefault();
-//   if (buyInp.value === '' || buyInp.value === '0') {
-//     buyError.textContent = 'Не верное значение';
-//   }
-//   if (buyInp.value < 200) {
-//     buyAnswerSpan.textContent = buyInp.value;
-//   } else if (buyInp.value < 300 && buyInp.value >= 200) {
-//     buyAnswerSpan.textContent = buyInp.value - (buyInp.value * 0.03);
-//   } else if (buyInp.value >= 300 && buyInp.value < 500) {
-//     buyAnswerSpan.textContent = buyInp.value - (buyInp.value * 0.05);
-//   } else if (buyInp.value >= 500) {
-//     buyAnswerSpan.textContent = buyInp.value - (buyInp.value * 0.07);
-//   }
-//   buyInp.value = '';
-// });
+buyButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  if (buyInp.value === '' || buyInp.value === '0') {
+    buyError.textContent = 'Не верное значение';
+  }
+  if (buyInp.value < 200) {
+    buyAnswerSpan.textContent = buyInp.value;
+  } else if (buyInp.value < 300 && buyInp.value >= 200) {
+    buyAnswerSpan.textContent = buyInp.value - (buyInp.value * 0.03);
+  } else if (buyInp.value >= 300 && buyInp.value < 500) {
+    buyAnswerSpan.textContent = buyInp.value - (buyInp.value * 0.05);
+  } else if (buyInp.value >= 500) {
+    buyAnswerSpan.textContent = buyInp.value - (buyInp.value * 0.07);
+  }
+  buyInp.value = '';
+});
 
 // Запросить у пользователя длину окружности и периметр квадрата. Определить, может ли такая окружность поместиться в указанный квадрат.
-const perimeterInpSquare = document.querySelector('.perimeter__inp--square'),
-  perimeterInpCircle = document.querySelector('.perimeter__inp--circle'),
+const perimeterInpCircle = document.querySelector('.perimeter__inp--circle'),
+  perimeterInpSquare = document.querySelector('.perimeter__inp--square'),
   perimeterButton = document.querySelector('.perimeter__button'),
-  perimeterAnswer = document.querySelector('.perimeter__answer');
+  perimeterAnswer = document.querySelector('.perimeter__answer'),
+  perimeterError = document.querySelector('.perimeter__error');
 
 perimeterButton.addEventListener('click', (event) => {
   const diameter = perimeterInpCircle.value / Math.PI,
     length = perimeterInpSquare.value / 4;
   event.preventDefault();
+
+  console.log(diameter);
+  console.log(length);
+
   if (perimeterInpSquare.value === '' || perimeterInpSquare.value <= 0 || perimeterInpCircle.value === '' || perimeterInpCircle.value <= 0) {
-    perimeterAnswer.textContent = 'Не коректное значение';
+    perimeterError.textContent = 'Не коректное значение';
   }
-  
-  if ()
+
+  if (diameter < length) {
+    perimeterAnswer.textContent = 'Круг поместится в квадрат';
+  } else {
+    perimeterAnswer.textContent = 'Круг НЕ поместится в квадрат';
+  }
+
+  perimeterInpSquare.value = '';
+  perimeterInpCircle.value = '';
 });
 
 // Задать пользователю 3 вопроса, в каждом вопросе по 3 варианта ответа. За каждый правильный ответ начисляется 2 балла. После вопросов выведите пользователю количество набранных баллов.
+const fQuestionCheckbox = document.querySelectorAll('.f-question__checkbox');
+
 
 // Запросить дату (день, месяц, год) и вывести следующую за ней дату. Учтите возможность перехода на следующий месяц, год, а также високосный год.
