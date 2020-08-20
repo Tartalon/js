@@ -169,7 +169,27 @@ perimeterButton.addEventListener('click', (event) => {
 });
 
 // Задать пользователю 3 вопроса, в каждом вопросе по 3 варианта ответа. За каждый правильный ответ начисляется 2 балла. После вопросов выведите пользователю количество набранных баллов.
-const fQuestionCheckbox = document.querySelectorAll('.f-question__checkbox');
+const fQuestionCheckbox = document.querySelectorAll('.f-question__checkbox'),
+  sQuestionCheckbox = document.querySelectorAll('.s-question__checkbox'),
+  tQuestionCheckbox = document.querySelectorAll('.t-question__checkbox'),
+  pointsButton = document.querySelector('.points__button'),
+  pointsAnswer = document.querySelector('.points-answer');
+
+pointsButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  // console.log(fQuestionCheckbox);
+  let points = 0;
+  if (fQuestionCheckbox[1].checked) {
+    points += 2;
+  }
+  if (sQuestionCheckbox[2].checked) {
+    points += 2;
+  }
+  if (tQuestionCheckbox[2].checked) {
+    points += 2;
+  }
+  pointsAnswer.textContent = points;
+});
 
 
 // Запросить дату (день, месяц, год) и вывести следующую за ней дату. Учтите возможность перехода на следующий месяц, год, а также високосный год.
