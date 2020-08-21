@@ -67,6 +67,10 @@ li {
   margin-bottom: 15px;
 }
 
+.points__wrapper {
+  margin-bottom: 45px;
+}
+
 .f-question {
   margin-bottom: 25px;
 }
@@ -90,4 +94,27 @@ li {
 
 .points__button:hover {
   cursor: pointer;
+}
+
+.day-wrapper {
+  text-align: center;
+}
+
+.day__date {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.day-text {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.date-inp {
+  min-width: 75px;
+  max-width: 90px;
+}
+
+.day__button {
+  display: inline-block;
 }

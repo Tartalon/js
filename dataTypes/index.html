@@ -113,6 +113,30 @@
     </div>
     <!-- /.points__wrapper -->
 
+    <div class="day-wrapper">
+      <p class="day-text">Введите дату</p>
+      <div class="day__date">
+        <label for="yer__inp" class="yer__lab">Год</label>
+        <input type="number" class="input yer__inp date-inp" id="yer__inp" />
+  
+        <label for="month__inp" class="month__lab">Месяц</label>
+        <input type="number" class="input month__inp date-inp" id="month__inp" />
+  
+        <label for="day__inp" class="day__lab">День</label>
+        <input type="number" class="input day__inp date-inp" id="day__inp" />
+      </div>
+
+      <button class="button day__button">Узнать следующую дату</button>
+      <p class="error day__error"></p>
+      <div class="box__answer">
+        <p class="day__answer">
+          Следующая дата:
+        </p>
+        <span class="answer__span buy__answer-span"></span>
+      </div>
+    </div>
+    <!-- /.day-wrapper -->
+
   </main>
 
   <script src="./index.js"></script>
