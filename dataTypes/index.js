@@ -193,3 +193,18 @@ pointsButton.addEventListener('click', (event) => {
 
 
 // Запросить дату (день, месяц, год) и вывести следующую за ней дату. Учтите возможность перехода на следующий месяц, год, а также високосный год.
+const yerInp = document.querySelector('.yer__inp'),
+  monthInp = document.querySelector('.month__inp'),
+  dayInp = document.querySelector('.day__inp'),
+  dayButton = document.querySelector('.day__button'),
+  dayError = document.querySelector('.day__error'),
+  dayAnswerSpan = document.querySelector('.day__answer-span');
+
+function checksInput () {
+  if (yerInp.value <= 0) {
+    dayError.textContent = 'Значение поля "Год" не верное';
+  }
+  if (monthInp.value <= 0 || dayError.value > 12) {
+    dayError.textContent = 'Значение поля "Месяц" не верное';
+  }
+}
