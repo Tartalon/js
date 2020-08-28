@@ -200,11 +200,10 @@ const yerInp = document.querySelector('.yer__inp'),
   dayError = document.querySelector('.day__error'),
   dayAnswerSpan = document.querySelector('.day__answer-span');
 
-function checksInput () {
-  if (yerInp.value <= 0) {
-    dayError.textContent = 'Значение поля "Год" не верное';
-  }
-  if (monthInp.value <= 0 || dayError.value > 12) {
-    dayError.textContent = 'Значение поля "Месяц" не верное';
-  }
-}
+dayButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  let yer = yerInp.value,
+    month = monthInp.value,
+    day = dayInp.valu;
+
+});

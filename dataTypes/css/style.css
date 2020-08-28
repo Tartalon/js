@@ -110,11 +110,6 @@ li {
   margin-bottom: 15px;
 }
 
-.date-inp {
-  min-width: 75px;
-  max-width: 90px;
-}
-
 .day__button {
   display: inline-block;
 }
