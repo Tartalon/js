@@ -16,7 +16,6 @@
 //   }
 // }
 
-
 // Запросить у пользователя число от 0 до 9 и вывести ему спецсимвол, который расположен на этой клавише (1–!, 2–@, 3–# и т. д).
 // let num = prompt('Введите число от 0 до 9');
 // switch (num) {
@@ -130,11 +129,11 @@ buyButton.addEventListener('click', (event) => {
   if (buyInp.value < 200) {
     buyAnswerSpan.textContent = buyInp.value;
   } else if (buyInp.value < 300 && buyInp.value >= 200) {
-    buyAnswerSpan.textContent = buyInp.value - (buyInp.value * 0.03);
+    buyAnswerSpan.textContent = buyInp.value - buyInp.value * 0.03;
   } else if (buyInp.value >= 300 && buyInp.value < 500) {
-    buyAnswerSpan.textContent = buyInp.value - (buyInp.value * 0.05);
+    buyAnswerSpan.textContent = buyInp.value - buyInp.value * 0.05;
   } else if (buyInp.value >= 500) {
-    buyAnswerSpan.textContent = buyInp.value - (buyInp.value * 0.07);
+    buyAnswerSpan.textContent = buyInp.value - buyInp.value * 0.07;
   }
   buyInp.value = '';
 });
@@ -154,7 +153,12 @@ perimeterButton.addEventListener('click', (event) => {
   console.log(diameter);
   console.log(length);
 
-  if (perimeterInpSquare.value === '' || perimeterInpSquare.value <= 0 || perimeterInpCircle.value === '' || perimeterInpCircle.value <= 0) {
+  if (
+    perimeterInpSquare.value === '' ||
+    perimeterInpSquare.value <= 0 ||
+    perimeterInpCircle.value === '' ||
+    perimeterInpCircle.value <= 0
+  ) {
     perimeterError.textContent = 'Не коректное значение';
   }
 
@@ -191,7 +195,6 @@ pointsButton.addEventListener('click', (event) => {
   pointsAnswer.textContent = points;
 });
 
-
 // Запросить дату (день, месяц, год) и вывести следующую за ней дату. Учтите возможность перехода на следующий месяц, год, а также високосный год.
 const yerInp = document.querySelector('.yer__inp'),
   monthInp = document.querySelector('.month__inp'),
@@ -206,4 +209,30 @@ dayButton.addEventListener('click', (event) => {
     month = monthInp.value,
     day = dayInp.valu;
 
+  day++;
+
+  switch (month) {
+    case '01':
+    case '03':
+    case '05':
+    case '07':
+    case '08':
+    case '10':
+    case '12':
+      if (day > 31) {
+        month++;
+        day = 1;
+      }
+      break;
+
+    case '02':
+      if (yer % 4 === 0 && day > 29) {
+        month++;
+        day = 1;
+      } else if (yer % 4 != 0 && day > 28) {
+        month++;
+        day = 1;
+      }
+      break;
+  }
 });
