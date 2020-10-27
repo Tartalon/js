@@ -125,5 +125,27 @@ const usersObj = {};
 
 // for of (имеет break)
 for (let value of users) {
-  console.log(value);
+  // console.log(value);
 }
+
+
+
+
+// Подсчитать сумму всех чисел в заданном пользователем диапазоне.
+const sumStart = document.querySelector('#sumStart'),
+  sumEnd = document.querySelector('#sumEnd'),
+  sumButton = document.querySelector('.sum__button'),
+  sumResult = document.querySelector('.sum__result');
+
+sumButton.addEventListener('click', () => {
+  startNum = +sumStart.value;
+  endNum = +sumEnd.value;
+  let resultNum = 0;
+
+  for(i = startNum; i <= endNum; i++) {
+    resultNum += i;
+    console.log(resultNum);
+  }
+
+  sumResult.textContent = resultNum;
+});
