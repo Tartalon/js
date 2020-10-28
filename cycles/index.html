@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>cycles</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cycles</title>
+  </head>
+  <body>
+    <div class="block__sum">
+      <label for="sumStart" class="sum__label">Начальное число</label>
+      <input type="number" class="sum__input" id="sumStart" />
 
-  <div class="block__sum">
-    <label for="sumStart" class="sum__label">Начальное число</label>
-    <input type="number" class="sum__input" id="sumStart">
+      <label for="sumEnd" class="sum__label">Конечное число</label>
+      <input type="number" class="sum__input" id="sumEnd" />
 
-    <label for="sumEnd" class="sum__label">Конечное число</label>
-    <input type="number" class="sum__input" id="sumEnd">
+      <div class="buttons">
+        <button class="sum__button">
+          Посчитать суму чисел в даном диапазоне
+        </button>
 
-    <button class="sum__button">Посчитать</button>
+        <button class="divider__button">Наибольший общий делитель</button>
+      </div>
 
-    <p class="sum__result"></p>
-  </div>
+      <p class="sum__result"></p>
+    </div>
 
-  <script src="./index.js"></script>
-</body>
+    <script src="./index.js"></script>
+  </body>
 </html>

@@ -135,17 +135,47 @@ for (let value of users) {
 const sumStart = document.querySelector('#sumStart'),
   sumEnd = document.querySelector('#sumEnd'),
   sumButton = document.querySelector('.sum__button'),
-  sumResult = document.querySelector('.sum__result');
+  sumResult = document.querySelector('.sum__result')
+  dividerButton = document.querySelector('.divider__button');
+
+// Очищаем инпуты
+function clearInput () {
+  sumStart.value = '';
+  sumEnd.value = '';
+}
+
 
 sumButton.addEventListener('click', () => {
-  startNum = +sumStart.value;
-  endNum = +sumEnd.value;
+  let a = +sumStart.value,
+    b = +sumEnd.value;
   let resultNum = 0;
 
-  for(i = startNum; i <= endNum; i++) {
+  for(i = a; i <= b; i++) {
     resultNum += i;
-    console.log(resultNum);
   }
 
-  sumResult.textContent = resultNum;
+  sumResult.textContent = `сумма чисел в данном диапазоне "${resultNum}"`;
+  clearInput();
+});
+
+// Запросить 2 числа и найти только наибольший общий делитель.
+dividerButton.addEventListener('click', () => {
+  let a = +sumStart.value,
+    b = +sumEnd.value;
+
+  if (a == 0) {
+    sumResult.textContent = b;
+  } else {
+    while (a != b) {
+      if (a > b) {
+        a = a - b;
+      }
+      else {
+        b = b - a;
+      }
+    }
+    sumResult.textContent = `Наибольший делитель заданных чисел "${a}"`;
+  }
+
+  clearInput();
 });
