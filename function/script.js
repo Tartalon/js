@@ -1,4 +1,4 @@
-// Function declaration - можем візвать когда угодно
+// Function declaration - можем вызвать когда угодно
 const user = {
   name: 'Vovka',
   age: 35

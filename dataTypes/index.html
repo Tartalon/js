@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>dataTypes</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <main class="main">
+    <div class="convert-wrapper">
+      <label for="convert" class="convert-lab">Введите сумму в долларах</label>
+      <input type="number" class="input convert-inp" id="convert-inp" />
+      <button class="button convert-button">Расчитать</button>
+      <p class="error convert__error"></p>
+      <div class="box__answer">
+        <p class="answer">Сумма в евро</p>
+        <span class="answer__span eur"></span>
+      </div>
+      <div class="box__answer">
+        <p class="answer">Сумма в гривне</p>
+        <span class="answer__span uan"></span>
+      </div>
+      <div class="box__answer">
+        <p class="answer">Сумма в манатах</p>
+        <span class="answer__span azn"></span>
+      </div>
+    </div>
+    <hr />
+    <!-- convert-wrapper -->
+
+    <div class="buy-wrapper">
+      <label for="buy__inp" class="buy__lab">Введите сумму покупки</label>
+      <input type="number" class="input buy__inp" id="buy__inp" />
+      <button class="button buy__button">Расчитать</button>
+      <p class="error buy__error"></p>
+      <div class="box__answer">
+        <p class="buy__answer">
+          К оплате:
+        </p>
+        <span class="answer__span buy__answer-span"></span>
+      </div>
+    </div>
+    <!-- /.buy-wrapper -->
+
+    <div class="perimeter__wrapper">
+      <label class="perimeter__lab">Введите длину окружности
+        <input type="number" class="input perimeter__inp--circle" />
+      </label>
+      <label class="perimeter__lab">Введите периметр квадрата
+        <input type="number" class="input perimeter__inp--square" />
+      </label>
+      <button class="button perimeter__button">Расчитать</button>
+      <p class="error perimeter__error"></p>
+      <div class="box__answer">
+        <p class="perimeter__answer"></p>
+      </div>
+    </div>
+    <!-- /.perimeter__wrapper -->
+
+    <div class="points__wrapper">
+      <div class="f-question">
+        <h3 class="f-question__text">Cамое глубокое озеро</h3>
+        <ul class="f-answers__list">
+          <li class="f-answers__item">
+            <p class="f-answers__one"><input type="radio" name="first-answer" class="f-question__checkbox">Ньяса</p>
+          </li>
+          <li class="f-answers__item">
+            <p class="f-answers__two"><input type="radio" name="first-answer" class="f-question__checkbox">Байкал</p>
+          </li>
+          <li class="f-answers__item">
+            <p class="f-answers__three"><input type="radio" name="first-answer"  class="f-question__checkbox">Сан-Мартин</p>
+          </li>
+        </ul>
+      </div>
+      <!-- /.f-question -->
+
+      <div class="s-question">
+        <h3 class="s-question__text">Cамое быстрое животное</h3>
+        <ul class="s-answers__list">
+          <li class="s-answers__item">
+            <p class="s-answers__one"><input type="radio" name="second-answer" class="s-question__checkbox">Газель</p>
+          </li>
+          <li class="s-answers__item">
+            <p class="s-answers__two"><input type="radio" name="second-answer" class="s-question__checkbox">Лев</p>
+          </li>
+          <li class="s-answers__item">
+            <p class="s-answers__three"><input type="radio" name="second-answer" class="s-question__checkbox">Гепард</p>
+          </li>
+        </ul>
+      </div>
+      <!-- /.s-question -->
+
+      <div class="t-question">
+        <h3 class="t-question__text">Cамое быстрое животное</h3>
+        <ul class="t-answers__list">
+          <li class="t-answers__item">
+            <p class="t-answers__one"><input type="radio" name="therd-answer" class="t-question__checkbox">Газель</p>
+          </li>
+          <li class="t-answers__item">
+            <p class="t-answers__two"><input type="radio" name="therd-answer" class="t-question__checkbox">Лев</p>
+          </li>
+          <li class="t-answers__item">
+            <p class="t-answers__three"><input type="radio" name="therd-answer" class="t-question__checkbox">Гепард</p>
+          </li>
+        </ul>
+      </div>
+      <!-- /.t-question -->
+      <buttom class="points__button">Посчитать балы</buttom>
+      <span class="points-answer"></span>
+    </div>
+    <!-- /.points__wrapper -->
+
+    <div class="day-wrapper">
+      <p class="day-text">Введите дату</p>
+      <div class="day__date">
+        <label for="yer__inp" class="yer__lab">Год</label>
+        <input type="date" class="input yer__inp date-inp" id="yer__inp" />
+  
+        <!-- <label for="month__inp" class="month__lab">Месяц</label>
+        <input type="number" class="input month__inp date-inp" id="month__inp" />
+  
+        <label for="day__inp" class="day__lab">День</label>
+        <input type="number" class="input day__inp date-inp" id="day__inp" /> -->
+      </div>
+
+      <button class="button day__button">Узнать следующую дату</button>
+      <p class="error day__error"></p>
+      <div class="box__answer">
+        <p class="day__answer">
+          Следующая дата:
+        </p>
+        <span class="answer__span day__answer-span"></span>
+      </div>
+    </div>
+    <!-- /.day-wrapper -->
+
+  </main>
+
+  <script src="./index.js"></script>
+</body>
+
+</html>

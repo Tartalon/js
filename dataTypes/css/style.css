@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  padding: 20px 0;
+}
+
+.convert-wrapper {
+  margin-bottom: 30px;
+}
+
+.button {
+  min-width: 150px;
+  min-height: 30px;
+  margin-bottom: 15px;
+  background-color: #fff;
+  border: 1.5px solid black;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-bottom: 15px;
+  min-height: 30px;
+}
+
+.box__answer {
+  width: 100%;
+  min-height: 30px;
+  margin-bottom: 10px;
+  padding: 7px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+}
+
+.answer__span {
+  min-width: 70px;
+  border: 1px solid black;
+}
+
+.input {
+  min-width: 150px;
+  min-height: 30px;
+}
+
+.buy-wrapper {
+  padding: 20px 0;
+}
+
+.perimeter__wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.perimeter__lab {
+  margin-bottom: 15px;
+}
+
+.points__wrapper {
+  margin-bottom: 45px;
+}
+
+.f-question {
+  margin-bottom: 25px;
+}
+
+.f-question__checkbox {
+  margin-right: 15px;
+}
+
+.s-question {
+  margin-bottom: 25px;
+}
+
+.t-question {
+  margin-bottom: 25px;
+}
+
+.points__button {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.points__button:hover {
+  cursor: pointer;
+}
+
+.day-wrapper {
+  text-align: center;
+}
+
+.day__date {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.day-text {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.day__button {
+  display: inline-block;
+}

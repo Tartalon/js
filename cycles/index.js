@@ -125,5 +125,57 @@ const usersObj = {};
 
 // for of (имеет break)
 for (let value of users) {
-  console.log(value);
+  // console.log(value);
 }
+
+
+
+
+// Подсчитать сумму всех чисел в заданном пользователем диапазоне.
+const sumStart = document.querySelector('#sumStart'),
+  sumEnd = document.querySelector('#sumEnd'),
+  sumButton = document.querySelector('.sum__button'),
+  sumResult = document.querySelector('.sum__result')
+  dividerButton = document.querySelector('.divider__button');
+
+// Очищаем инпуты
+function clearInput () {
+  sumStart.value = '';
+  sumEnd.value = '';
+}
+
+
+sumButton.addEventListener('click', () => {
+  let a = +sumStart.value,
+    b = +sumEnd.value;
+  let resultNum = 0;
+
+  for(i = a; i <= b; i++) {
+    resultNum += i;
+  }
+
+  sumResult.textContent = `сумма чисел в данном диапазоне "${resultNum}"`;
+  clearInput();
+});
+
+// Запросить 2 числа и найти только наибольший общий делитель.
+dividerButton.addEventListener('click', () => {
+  let a = +sumStart.value,
+    b = +sumEnd.value;
+
+  if (a == 0) {
+    sumResult.textContent = b;
+  } else {
+    while (a != b) {
+      if (a > b) {
+        a = a - b;
+      }
+      else {
+        b = b - a;
+      }
+    }
+    sumResult.textContent = `Наибольший делитель заданных чисел "${a}"`;
+  }
+
+  clearInput();
+});
