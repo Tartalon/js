@@ -19,15 +19,16 @@ for (let i = 1; i <= 5; i++) {
 }
 
 /* Wiring up the Darken/Lighten button */
-btn.onclick = function (event) {
-  target = event.target;
-  if(target.getAttribute('class', "dark")) {
-    btn.setAttribute('class', "light");
+btn.onclick = function () {
+
+  if(btn.getAttribute('class') === 'dark') {
+    btn.setAttribute('class', 'light');
     btn.textContent = 'Светлее';
-    overlay.style.backgroundColor = rgba(0,0,0,0.5);
+    overlay.style.backgroundColor = 'rgb(0,0,0,0.5)';
+
   } else {
-    btn.setAttribute('class', "dark");
+    btn.setAttribute('class', 'dark');
     btn.textContent = 'Темнее';
-    overlay.style.backgroundColor = rgba(0,0,0,0);
+    overlay.style.backgroundColor = 'rgb(0,0,0,0)';
   }
 }
