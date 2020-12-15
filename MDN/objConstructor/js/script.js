@@ -5,10 +5,20 @@ function Person(first, last, age, gender, interests, pet) {
   };
   this.age = age;
   this.gender = gender;
-  this.interests = interests;
+
+  this.interests = interests.join(', ');
+
   this.pet = pet;
   this.bio = function() {
-    alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + tis.interests[1] + '.');
+    let genderWho = '';
+    if(gender === 'mail') {
+      genderWho = 'He';
+    } else if(gender === 'femail') {
+      genderWho = 'She';
+    } else {
+      genderWho = 'This person';
+    }
+    alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. ' + genderWho + ' likes ' + interests + '.');
   };
   this.greeting = function() {
     alert('Hi! I\'m ' + this.name.first + '.');
@@ -18,4 +28,4 @@ function Person(first, last, age, gender, interests, pet) {
   };
 }
 
-let person1 = new Person('Bob', 'Smith', '32', 'male', ['music', 'skiing'], 'cat');
+let person1 = new Person('Bob', 'Smith', '32', 'fema', ['music', 'skiing'], 'cat');
