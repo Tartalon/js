@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.calcNumAnswer {
+  padding: 0 20px;
+}
+
+.evenOdd {
+  max-width: 100px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
