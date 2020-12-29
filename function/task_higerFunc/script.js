@@ -12,16 +12,16 @@
 
 // 1
 function firstFunc(arr, fn) {
-  let res = '';
-  for (let i = 0; i < arr.length; i++) {
-    res += (fn(arr[i]));
+  let res = 'New value: ';
+
+  for(let i = 0; i < arr.length; i++) {
+    res += fn(arr[i]);
   }
-  return res;
+  return res.trim();
 }
 
 function handler1(el) {
-  let newArr = el.replace(el[0], el[0].toUpperCase());
-  return newArr;
+  return el[0].toUpperCase() + el.slice(1);
 }
 
 console.log(firstFunc(['my', 'name', 'is', 'Trinity'], handler1));
