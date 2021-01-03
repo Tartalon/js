@@ -14,7 +14,8 @@
 // 1
 function firstFunc(arr, fn) {
   let res = 'New value: ';
-  for (let i = 0; i < arr.length; i++) {
+
+  for(let i = 0; i < arr.length; i++) {
     res += fn(arr[i]);
   }
   return res.trim();
@@ -30,7 +31,7 @@ function handler2(el) {
   return Number(el) * 10 + ', ';
 }
 
-console.log(firstFunc([10, 20, 30], handler2) )
+console.log(firstFunc([10, 20, 30], handler2));
 
 function handler3(el) {
   return `${el.name} is ${el.age}, `;
