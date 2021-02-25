@@ -45,10 +45,18 @@ people.push(
   new Human ('Andru', 'Fokin', 38, 'Footboll')
 );
 
-function sortByAge () {
-  for (index of people) {
-    
+people.sort (function (n, m) {
+  let f = n.age;
+  let s = m.age;
+  if(f < s) {
+    return -1;
   }
-}
+  else if(f > s) {
+    return 1;
+  }
+  else {
+    return 0;
+  }
+});
 
 console.log(people);
