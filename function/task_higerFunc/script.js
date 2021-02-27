@@ -72,7 +72,7 @@ function every(arr, fn) {
 // }
 
 // 2================
-  // Получаем щтправную точку в качестве аргумента
+  // Получаем старавную точку в качестве аргумента
 const counterToOneHundred = startingPoint => {
   // Определяем интервал
   const isOdd = startingPoint % 2;
