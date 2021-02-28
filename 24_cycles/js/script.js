@@ -22,42 +22,73 @@ const positive = document.querySelector('.evenOdd__positive'),
   odd = document.querySelector('.evenOdd__odd'),
   evenOddButton = document.querySelector('.evenOdd__button');
 
-  evenOddButton.addEventListener('click', function (e) {
-    e.preventDefault();
-    let positiveNum = 0,
-      negativeNum = 0,
-      zeroNum = 0,
-      evenNum = 0,
-      oddNum = 0;
-    for (let i = 0; i < evenOddInputs.length; i++) {
-      if(+evenOddInputs[i].value === 0) {
-        zeroNum++;
+evenOddButton.addEventListener('click', function (e) {
+  e.preventDefault();
+  let positiveNum = 0,
+    negativeNum = 0,
+    zeroNum = 0,
+    evenNum = 0,
+    oddNum = 0;
+  for (let i = 0; i < evenOddInputs.length; i++) {
+    if(+evenOddInputs[i].value === 0) {
+      zeroNum++;
+    }
+    if (+evenOddInputs[i].value > 0) {
+      positiveNum++;
+      if (+evenOddInputs[i].value % 2 === 0) {
+        evenNum++;
+      } else {
+        oddNum++;
       }
-      if (+evenOddInputs[i].value > 0) {
-        positiveNum++;
-        if (+evenOddInputs[i].value % 2 === 0) {
+    }
+    if (+evenOddInputs[i].value < 0) {
+        negativeNum++;
+        if(+evenOddInputs[i].value % 2 === 0) {
           evenNum++;
         } else {
           oddNum++;
         }
       }
-      if (+evenOddInputs[i].value < 0) {
-          negativeNum++;
-          if(+evenOddInputs[i].value % 2 === 0) {
-            evenNum++;
-          } else {
-            oddNum++;
-          }
-        }
-    }
-    positive.textContent = `Положительных: ${positiveNum}`;
-    negative.textContent = `Отрицательных: ${negativeNum}`;
-    zero.textContent = `Нолей: ${zeroNum}`;
-    even.textContent = `Четных: ${evenNum}`;
-    odd.textContent = `Не четных: ${oddNum}`;
-  });
+  }
+  positive.textContent = `Положительных: ${positiveNum}`;
+  negative.textContent = `Отрицательных: ${negativeNum}`;
+  zero.textContent = `Нолей: ${zeroNum}`;
+  even.textContent = `Четных: ${evenNum}`;
+  odd.textContent = `Не четных: ${oddNum}`;
+});
 
 
+// Зациклить калькулятор. Запросить у пользователя 2 числа и знак, решить пример, вывести результат и спросить, хочет ли он решить еще один пример. И так до тех пор, пока пользователь не откажется.
 
-  
-  // Зациклить калькулятор. Запросить у пользователя 2 числа и знак, решить пример, вывести результат и спросить, хочет ли он решить еще один пример. И так до тех пор, пока пользователь не откажется.
+const resultButton = document.querySelector('.math__result');
+
+resultButton.addEventListener('click', getInputs());
+
+function getInputs() {
+  const firstNum = +prompt('Введите первое число'),
+  secondtNum = +prompt('Введите второе число'),
+  signInput = prompt('Введите знак')
+
+  switch (signInput) {
+  case '-':
+    alert(`Result: ${firstNum - secondtNum}`);
+    break;
+  case '+':
+    alert(`Result: ${firstNum + secondtNum}`);
+    break;
+  case '*':
+    alert(`Result: ${firstNum * secondtNum}`);
+    break;
+  case '/':
+    alert(`Result: ${firstNum / secondtNum}`);
+    break;
+
+  default:
+    alert('Вы не верно заполнили поле');
+    break;
+  };
+  const next = confirm('Хотите продолжить?');
+  if (next) {
+    getInputs();
+  }
+}
