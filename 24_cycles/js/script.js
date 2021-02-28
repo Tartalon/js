@@ -118,3 +118,14 @@ shiftButton.addEventListener('click', function () {
   shiftResult.textContent = `Результат: ${res}`;
   console.log(numbers);
 });
+
+
+//=============================================
+
+// Зациклить вывод дней недели таким образом: «День недели. Хотите увидеть следующий день?» и так до тех пор, пока пользователь нажимает OK.
+
+const weekDays = document.querySelector('.weekDays');
+
+weekDays.addEventListener('click', () => {
+  
+});
