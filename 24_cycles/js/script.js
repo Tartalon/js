@@ -10,7 +10,7 @@ checkQuantity.addEventListener('click', function (e) {
   calcNum.value = '';
 })
 
-
+// =================================================
 
 // 5. Запросить у пользователя 10 чисел и подсчитать, сколько он ввел положительных, отрицательных и нулей. При этом также посчитать, сколько четных и нечетных. Вывести статистику на экран. Учтите, что достаточно одной переменной (не 10) для ввода чисел пользователем.
 
@@ -57,9 +57,10 @@ evenOddButton.addEventListener('click', function (e) {
   odd.textContent = `Не четных: ${oddNum}`;
 });
 
+// ==========================================
 
 // Зациклить калькулятор. Запросить у пользователя 2 числа и знак, решить пример, вывести результат и спросить, хочет ли он решить еще один пример. И так до тех пор, пока пользователь не откажется.
-
+/*
 const resultButton = document.querySelector('.math__result');
 
 resultButton.addEventListener('click', getInputs());
@@ -92,3 +93,28 @@ function getInputs() {
     getInputs();
   }
 }
+*/
+
+// =====================================
+
+// Запросить у пользователя число и на сколько цифр его сдвинуть. Сдвинуть цифры числа и вывести результат (если число 123456 сдвинуть на 2 цифры, то получится 345612).
+
+const numberInput = document.querySelector('#number__input'),
+  shiftInput = document.querySelector('#shift__input'),
+  shiftResult = document.querySelector('.shift__result'),
+  shiftButton = document.querySelector('.shift__button');
+
+shiftButton.addEventListener('click', function () {
+  let numbers = numberInput.value;
+  let shift = shiftInput.value;
+  let shiftNum = '';
+  let res = '';
+
+  for (let i = 0; i < shift; i++) {
+    shiftNum += numbers[i];
+  }
+  res = numbers.replace(shiftNum, '') + shiftNum;
+
+  shiftResult.textContent = `Результат: ${res}`;
+  console.log(numbers);
+});
