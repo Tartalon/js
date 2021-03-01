@@ -127,5 +127,17 @@ shiftButton.addEventListener('click', function () {
 const weekDays = document.querySelector('.weekDays');
 
 weekDays.addEventListener('click', () => {
+  let date = window.Date();
+  let day = date.split(' ')[0];
+  let dayNow = 'Хотите узнать следующий день?';
+
+  switch (day) {
+    case Mon:
+      
+      break;
   
+    default:
+      break;
+  }
+  console.log(day);
 });
