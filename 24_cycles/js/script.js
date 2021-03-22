@@ -127,17 +127,54 @@ shiftButton.addEventListener('click', function () {
 const weekDays = document.querySelector('.weekDays');
 
 weekDays.addEventListener('click', () => {
-  let date = window.Date();
-  let day = date.split(' ')[0];
-  let dayNow = 'Хотите узнать следующий день?';
+  let date = new Date;
+  let day = date.getDay();
+  let askDay;
 
-  switch (day) {
-    case Mon:
-      
-      break;
-  
-    default:
-      break;
+  function getDay () {
+    checkNonExistentDay();
+    switch (day) {
+      case 0:
+        today = 'Воскресенье',
+        day++;
+        break;
+      case 1:
+        today = 'Понедельник',
+        day++;
+        break;
+      case 2:
+        today = 'Вторник',
+        day++;
+        break;
+      case 3:
+        today = 'Среда',
+        day++;
+        break;
+      case 4:
+        today = 'Четверг',
+        day++;
+        break;
+      case 5:
+        today = 'Пятница',
+        day++;
+        break;
+    
+      default:
+        today = 'Суббота',
+        day++;
+        break;
+    }
+  }
+
+  function checkNonExistentDay () {
+    if (day > 6) day = 0;
+  }
+
+  getDay();
+
+  askDay = confirm(`День недели ${day}. Хотите увидеть следующий день?`);
+  if (askDay) {
+    getDay();
   }
   console.log(day);
 });
