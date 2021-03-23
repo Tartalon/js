@@ -19,8 +19,8 @@ let mergObj = Object.assign({}, obj1, obj2);
 console.log(mergObj);
 
 // Глубокое копирование при помощи JSON
-let jsonObj = JSON.stringify(obj1);
-newObj = JSON.parse(jsonObj);
+let jsonObj = JSON.stringify(obj1); //загнали в JSON формат
+newObj = JSON.parse(jsonObj); //распарсили
 // newObj = JSON.parse(JSON.stringify(obj1));
 // console.log(newObj);
 // console.log(newObj.info === obj1.info); // теперь полная копия
@@ -34,5 +34,5 @@ let values = Object.values(obj2); //Массив значений
 let entries = Object.entries(obj1);// Возвращает массив массивов где каждый элемент массив из двух элементов (ключ, значение);
 // console.log(entries);
 
-let fromEntries = Object.fromEntries([['a', 'value'], ['b', 'b_Value']]); //обратный от Entries (создает объект)ж
+let fromEntries = Object.fromEntries([['a', 'value'], ['b', 'b_Value']]); //обратный от Entries (создает объект).
 console.log(fromEntries);
