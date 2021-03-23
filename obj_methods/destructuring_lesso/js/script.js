@@ -88,4 +88,13 @@ function foo(x, y, ...others) {
   console.log(others);
 }
 
-foo(12, 4, 6, 87);
+// foo(12, 4, 6, 87);
+
+
+const numbers = [2, 4];
+
+function foo2 (x, y) {
+  console.log(x, y);
+}
+
+foo2(...numbers);
