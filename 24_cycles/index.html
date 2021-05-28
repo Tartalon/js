@@ -35,6 +35,34 @@
       <p class="evenOdd__even"></p>
       <p class="evenOdd__odd"></p>
     </div>
+    <hr />
+
+    <div class="calculator">
+      <form class="calculator__form">
+        <label class="calculator__label">
+          <span>Введите первое число:</span>
+          <input
+            type="number"
+            class="calculator-num__input calculator__first-num"
+          />
+        </label>
+        <label class="calculator__label">
+          <span>Введите второе число:</span>
+          <input
+            type="number"
+            class="calculator-num__input calculator__second-num"
+          />
+        </label>
+        <label class="calculator__label">
+          <span>Введите знак:</span>
+          <input type="text" class="calculator-txt__input calculator__sign" />
+        </label>
+        <button class="calculator__button">Посчитать</button>
+      </form>
+      <p class="calculator__result">
+        Результат: <span class="calculator__result-span">0</span>
+      </p>
+    </div>
 
     <script src="./js/script.js"></script>
   </body>

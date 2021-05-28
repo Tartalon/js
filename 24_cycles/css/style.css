@@ -15,7 +15,7 @@ li {
 .container {
   width: 100%;
   padding: 0 15px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
 }
 
 .calcNumAnswer {
@@ -27,4 +27,36 @@ li {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+}
+
+.calculator {
+  padding: 20px 15px;
+}
+
+.calculator__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.calculator__label {
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.calculator__label:last-child {
+  padding-bottom: 0;
+}
+
+.calculator__label span {
+  width: 100%;
+  max-width: 200px;
+  display: inline-block;
+}
+
+.calculator__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: max-content;
+  padding: 5px;
 }
