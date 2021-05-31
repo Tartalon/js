@@ -107,9 +107,19 @@ calculatorButton.addEventListener('click', e => {
   clearInputs();
 });
 
+function clearInp() {
+  // let arg = [];
+  // for (let i = 0; i < arguments.length; i++) {
+  //   arg.push(arguments[i]);
+  // }
+  console.log(arguments);
+}
+
+clearInp(23, 15, 39);
+
 // ==========================================
 
-// Зациклить калькулятор. Запросить у пользователя 2 числа и знак, решить пример, вывести результат и спросить, хочет ли он решить еще один пример. И так до тех пор, пока пользователь не откажется.
+// 6. Зациклить калькулятор. Запросить у пользователя 2 числа и знак, решить пример, вывести результат и спросить, хочет ли он решить еще один пример. И так до тех пор, пока пользователь не откажется.
 /*
 const resultButton = document.querySelector('.math__result');
 
@@ -147,31 +157,56 @@ function getInputs() {
 
 // =====================================
 
-// Запросить у пользователя число и на сколько цифр его сдвинуть. Сдвинуть цифры числа и вывести результат (если число 123456 сдвинуть на 2 цифры, то получится 345612).
+// 7. Запросить у пользователя число и на сколько цифр его сдвинуть. Сдвинуть цифры числа и вывести результат (если число 123456 сдвинуть на 2 цифры, то получится 345612).
 
-const numberInput = document.querySelector('#number__input'),
-  shiftInput = document.querySelector('#shift__input'),
-  shiftResult = document.querySelector('.shift__result'),
-  shiftButton = document.querySelector('.shift__button');
+// a ==============
 
-shiftButton.addEventListener('click', function () {
-  let numbers = numberInput.value;
-  let shift = shiftInput.value;
-  let shiftNum = '';
+// const numberInput = document.querySelector('#number__input'),
+//   shiftInput = document.querySelector('#shift__input'),
+//   shiftResult = document.querySelector('.shift__result'),
+//   shiftButton = document.querySelector('.shift__button');
+
+// shiftButton.addEventListener('click', function () {
+//   let numbers = numberInput.value;
+//   let shift = shiftInput.value;
+//   let shiftNum = '';
+//   let res = '';
+
+//   for (let i = 0; i < shift; i++) {
+//     shiftNum += numbers[i];
+//   }
+//   res = numbers.replace(shiftNum, '') + shiftNum;
+
+//   shiftResult.textContent = `Результат: ${res}`;
+//   console.log(numbers);
+// });
+
+//  b ==================
+
+const inputNumber = document.querySelector('.inputNumber');
+const shiftNum = document.querySelector('.shiftNumber');
+const shiftNumButton = document.querySelector('.shift-num__button');
+const shiftNumResultSpan = document.querySelector('.shift-num__result-span');
+
+shiftNumButton.addEventListener('click', e => {
+  e.preventDefault();
+
+  let inputNum = inputNumber.value;
+  let inputShift = +shiftNum.value;
+  let shift = '';
   let res = '';
 
-  for (let i = 0; i < shift; i++) {
-    shiftNum += numbers[i];
+  for (let i = 0; i < inputShift; i++) {
+    shift += inputNum[i];
   }
-  res = numbers.replace(shiftNum, '') + shiftNum;
 
-  shiftResult.textContent = `Результат: ${res}`;
-  console.log(numbers);
+  res = inputNum.replace(shift, '') + shift;
+  shiftNumResultSpan.textContent = res;
 });
 
 //=============================================
 
-// Зациклить вывод дней недели таким образом: «День недели. Хотите увидеть следующий день?» и так до тех пор, пока пользователь нажимает OK.
+// 8. Зациклить вывод дней недели таким образом: «День недели. Хотите увидеть следующий день?» и так до тех пор, пока пользователь нажимает OK.
 
 const weekDays = document.querySelector('.weekDays');
 

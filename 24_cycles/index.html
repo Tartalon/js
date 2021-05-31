@@ -39,18 +39,21 @@
 
       <form action="" class="shift">
         <label for="shift__label" class="shift__label">Введите число</label>
-        <input type="number" id="number__input" class="shift__input">
-        <label for="shift__label" class="shift__label">Введите на сколько сдвинуть</label>
-        <input type="number" id="shift__input" class="shift__input">
+        <input type="number" id="number__input" class="shift__input" />
+        <label for="shift__label" class="shift__label"
+          >Введите на сколько сдвинуть</label
+        >
+        <input type="number" id="shift__input" class="shift__input" />
       </form>
       <button class="shift__button">Сдвинуть</button>
-      <p class="shift__result">Результат: </p>
+      <p class="shift__result">Результат:</p>
 
       <button class="weekDays">День недели</button>
     </div>
     <hr />
 
     <div class="calculator">
+      <h3 class="calculator__title">№6 калькулятор</h3>
       <form class="calculator__form">
         <label class="calculator__label">
           <span>Введите первое число:</span>
@@ -74,6 +77,30 @@
       </form>
       <p class="calculator__result">
         Результат: <span class="calculator__result-span">0</span>
+      </p>
+    </div>
+    <!--  /.calculator -->
+    <div class="shift-num__box">
+      <h3 class="shift-num__title">№7 Сдвиг числа</h3>
+      <form class="shift-num__form">
+        <label class="shift-num__label">
+          <input
+            type="number"
+            class="shift-num__input inputNumber"
+            placeholder="Введите число"
+          />
+        </label>
+        <label class="shift-num__label">
+          <input
+            type="number"
+            class="shift-num__input shiftNumber"
+            placeholder="На сколько сдвинуть?"
+          />
+        </label>
+        <button class="shift-num__button">Показать результат</button>
+      </form>
+      <p class="shift-num__result">
+        Результат: <span class="shift-num__result-span"></span>
       </p>
     </div>
 
