@@ -16,7 +16,7 @@ checkQuantity.addEventListener('click', function (e) {
   calcNum.value = '';
 });
 
-// 5. Запросить у пользователя 10 чисел и подсчитать, сколько он ввел положительных, отрицательных и нулей. При этом также посчитать, сколько четных и нечетных. Вывести статистику на экран. Учтите, что достаточно одной переменной (не 10) для ввода чисел пользователем.
+// 5 ==============
 
 const evenOddInputs = document.querySelectorAll('.evenOdd_input');
 const positive = document.querySelector('.evenOdd__positive'),
@@ -61,7 +61,7 @@ evenOddButton.addEventListener('click', function (e) {
   odd.textContent = `Не четных: ${oddNum}`;
 });
 
-// 6. Зациклить калькулятор. Запросить у пользователя 2 числа и знак, решить пример, вывести результат и спросить, хочет ли он решить еще один пример. И так до тех пор, пока пользователь не откажется.
+// 6 ==============
 
 const calculatorFirstNum = document.querySelector('.calculator__first-num');
 const calculatorSecondNum = document.querySelector('.calculator__second-num');
@@ -77,10 +77,6 @@ calculatorButton.addEventListener('click', e => {
   let result;
 
   console.log(firstNum, secondNum, sign);
-
-  // if (sign !== '+' || sign !== '-' || sign !== '*' || sign !== '/') {
-  //   calculatorResult.textContent = 'Вы ввели не верный символ'
-  // }
 
   switch (sign) {
     case '+':
@@ -107,47 +103,7 @@ calculatorButton.addEventListener('click', e => {
   clearInp(calculatorFirstNum, calculatorSecondNum, calculatorSign);
 });
 
-// ==========================================
-
-// 6. Зациклить калькулятор. Запросить у пользователя 2 числа и знак, решить пример, вывести результат и спросить, хочет ли он решить еще один пример. И так до тех пор, пока пользователь не откажется.
-/*
-const resultButton = document.querySelector('.math__result');
-
-resultButton.addEventListener('click', getInputs());
-
-function getInputs() {
-  const firstNum = +prompt('Введите первое число'),
-  secondtNum = +prompt('Введите второе число'),
-  signInput = prompt('Введите знак')
-
-  switch (signInput) {
-  case '-':
-    alert(`Result: ${firstNum - secondtNum}`);
-    break;
-  case '+':
-    alert(`Result: ${firstNum + secondtNum}`);
-    break;
-  case '*':
-    alert(`Result: ${firstNum * secondtNum}`);
-    break;
-  case '/':
-    alert(`Result: ${firstNum / secondtNum}`);
-    break;
-
-  default:
-    alert('Вы не верно заполнили поле');
-    break;
-  };
-  const next = confirm('Хотите продолжить?');
-  if (next) {
-    getInputs();
-  }
-}
-*/
-
-// =====================================
-
-// 7. Запросить у пользователя число и на сколько цифр его сдвинуть. Сдвинуть цифры числа и вывести результат (если число 123456 сдвинуть на 2 цифры, то получится 345612).
+// 7 =================
 
 // a ==============
 
@@ -196,9 +152,7 @@ shiftNumButton.addEventListener('click', e => {
   clearInp(inputNumber, shiftNum);
 });
 
-//=============================================
-
-// 8. Зациклить вывод дней недели таким образом: «День недели. Хотите увидеть следующий день?» и так до тех пор, пока пользователь нажимает OK.
+// 8 ============================
 
 // const weekDays = document.querySelector('.weekDays');
 
@@ -248,63 +202,45 @@ shiftNumButton.addEventListener('click', e => {
 //   console.log(day);
 // });
 
-// 9 Вывести таблицу умножения для всех чисел от 2 до 9. Каждое число необходимо умножить на числа от 1 до 10.
-
+// 9 =================
 for (let i = 2; i <= 9; i++) {
   for (let k = 1; k <= 10; k++) {
     // console.log(`${i} * ${k} = ${k * i}`);
   }
 }
 
-// 10 Игра «Угадай число». Предложить пользователю загадать число от 0 до 100 и отгадать его следующим способом: каждую итерацию цикла делите диапазон чисел пополам, записываете результат в N и спрашиваете у пользователя «Ваше число > N, < N или == N?». В зависимости от того, что указал пользователь, уменьшаете диапазон. Начальный диапазон от 0 до 100, поделили пополам и получили 50. Если пользователь указал, что его число > 50, то изменили диапазон на от 51 до 100. И так до тех пор, пока пользователь не выберет == N.
+// 10 =============
 
 const guessNumberButton = document.querySelector('.guess-number__button');
-const guessNumberText = document.querySelector('.guess-number__text');
-const guessNumberLabelSpans = document.querySelectorAll(
-  '.guess-number__label-span'
-);
-const guessNumberInputs = document.querySelectorAll('.guess-number__input');
 
-guessNumberButton.onclick = function (e) {
+guessNumberButton.addEventListener('click', e => {
   e.preventDefault();
 
   let max = 100;
   let mid = 50;
   let min = 0;
-  let checked;
+  let sign;
 
-  mid = Math.floor(min + (max - min) / 2);
+  do {
+    mid = Math.floor(min + (max - min) / 2);
 
-  suggestNumber();
-  getChecked();
-  changeButtonText();
+    sign = prompt(
+      `Загаданное число больше (>) ${mid}, меньше (<) ${mid} или = ${mid}? /nВведите знак:`
+    );
 
-  if (checked === 0) {
-    min = mid;
-    guessNumberText.textContent = ` min ${min}, max ${max}`;
-  } else if (checked === 1) {
-    max = mid;
-    guessNumberText.textContent = ` min ${min}, max ${max}`;
-  } else {
-    guessNumberText.textContent = ` Вы загадали ${checked.value}`;
-  }
-
-  function changeButtonText() {
-    guessNumberButton.textContent = 'Еще разок';
-  }
-
-  function suggestNumber() {
-    for (let item of guessNumberLabelSpans) {
-      item.textContent = mid;
+    if (!sign) {
+      alert('Вы не ввели знак');
+      return;
     }
-  }
 
-  function getChecked() {
-    for (let i = 0; i < guessNumberInputs.length; i++) {
-      if (guessNumberInputs[i].checked) {
-        checked = i;
-      }
+    if (sign === '>') {
+      min = mid;
+    } else if (sign === '<') {
+      max = mid;
+    } else if (sign === '=') {
+      alert(`Мы его нашли: ${mid}`);
+    } else {
+      alert(`${sign} - не верный знак`);
     }
-    return checked;
-  }
-};
+  } while (sign != '=');
+});
