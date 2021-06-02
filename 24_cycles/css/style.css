@@ -60,3 +60,20 @@ li {
   max-width: max-content;
   padding: 5px;
 }
+
+.shift-num__box {
+  padding: 20px 15px;
+}
+
+.guess-number__box {
+  padding: 20px 15px;
+}
+
+.guess-number__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.guess-number__button {
+  padding: 5px 7px;
+}

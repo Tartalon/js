@@ -80,6 +80,7 @@
       </p>
     </div>
     <!--  /.calculator -->
+
     <div class="shift-num__box">
       <h3 class="shift-num__title">№7 Сдвиг числа</h3>
       <form class="shift-num__form">
@@ -103,6 +104,30 @@
         Результат: <span class="shift-num__result-span"></span>
       </p>
     </div>
+    <!-- /.shift-num__box -->
+    <hr />
+
+    <div class="guess-number__box">
+      <h3 class="guess-number__title">№10 Guess the number</h3>
+      <p>Загодайте число от 0 до 100</p>
+      <form class="guess-number__form">
+        <label class="guess-number__label">
+          Число &gt <span class="guess-number__label-span">50</span>?
+          <input type="radio" name="guess" class="guess-number__input" />
+        </label>
+        <label class="guess-number__label">
+          Число &lt <span class="guess-number__label-span">50</span>?
+          <input type="radio" name="guess" class="guess-number__input" />
+        </label>
+        <label class="guess-number__label">
+          Число = <span class="guess-number__label-span">50</span>?
+          <input type="radio" name="guess" class="guess-number__input" />
+        </label>
+      </form>
+      <button class="guess-number__button">Попробуем угадать</button>
+      <p class="guess-number__text">Результат:</p>
+    </div>
+    <!-- /.guess-number__box -->
 
     <script src="./js/script.js"></script>
   </body>

@@ -1,3 +1,9 @@
+function clearInp() {
+  for (let i = 0; i < arguments.length; i++) {
+    arguments[i].value = '';
+  }
+}
+
 // Определить количество цифр в введенном числе.
 const calcNum = document.querySelector('#calcNum');
 const checkQuantity = document.querySelector('.checkQuantity');
@@ -98,24 +104,8 @@ calculatorButton.addEventListener('click', e => {
 
   calculatorResult.textContent = `${firstNum} ${sign} ${secondNum} = ${result}`;
 
-  clearInputs = () => {
-    calculatorFirstNum.value = '';
-    calculatorSecondNum.value = '';
-    calculatorSign.value = '';
-  };
-
-  clearInputs();
+  clearInp(calculatorFirstNum, calculatorSecondNum, calculatorSign);
 });
-
-function clearInp() {
-  // let arg = [];
-  // for (let i = 0; i < arguments.length; i++) {
-  //   arg.push(arguments[i]);
-  // }
-  console.log(arguments);
-}
-
-clearInp(23, 15, 39);
 
 // ==========================================
 
@@ -192,7 +182,7 @@ shiftNumButton.addEventListener('click', e => {
   e.preventDefault();
 
   let inputNum = inputNumber.value;
-  let inputShift = +shiftNum.value;
+  let inputShift = shiftNum.value;
   let shift = '';
   let res = '';
 
@@ -202,56 +192,119 @@ shiftNumButton.addEventListener('click', e => {
 
   res = inputNum.replace(shift, '') + shift;
   shiftNumResultSpan.textContent = res;
+
+  clearInp(inputNumber, shiftNum);
 });
 
 //=============================================
 
 // 8. Зациклить вывод дней недели таким образом: «День недели. Хотите увидеть следующий день?» и так до тех пор, пока пользователь нажимает OK.
 
-const weekDays = document.querySelector('.weekDays');
+// const weekDays = document.querySelector('.weekDays');
 
-weekDays.addEventListener('click', () => {
-  let date = new Date();
-  let day = date.getDay();
-  let askDay;
+// weekDays.addEventListener('click', () => {
+//   let date = new Date();
+//   let day = date.getDay();
+//   let askDay;
 
-  function getDay() {
-    checkNonExistentDay();
-    switch (day) {
-      case 0:
-        (today = 'Воскресенье'), day++;
-        break;
-      case 1:
-        (today = 'Понедельник'), day++;
-        break;
-      case 2:
-        (today = 'Вторник'), day++;
-        break;
-      case 3:
-        (today = 'Среда'), day++;
-        break;
-      case 4:
-        (today = 'Четверг'), day++;
-        break;
-      case 5:
-        (today = 'Пятница'), day++;
-        break;
+//   function getDay() {
+//     checkNonExistentDay();
+//     switch (day) {
+//       case 0:
+//         (today = 'Воскресенье'), day++;
+//         break;
+//       case 1:
+//         (today = 'Понедельник'), day++;
+//         break;
+//       case 2:
+//         (today = 'Вторник'), day++;
+//         break;
+//       case 3:
+//         (today = 'Среда'), day++;
+//         break;
+//       case 4:
+//         (today = 'Четверг'), day++;
+//         break;
+//       case 5:
+//         (today = 'Пятница'), day++;
+//         break;
 
-      default:
-        (today = 'Суббота'), day++;
-        break;
+//       default:
+//         (today = 'Суббота'), day++;
+//         break;
+//     }
+//   }
+
+//   function checkNonExistentDay() {
+//     if (day > 6) day = 0;
+//   }
+
+//   getDay();
+
+//   askDay = confirm(`День недели ${day}. Хотите увидеть следующий день?`);
+//   if (askDay) {
+//     getDay();
+//   }
+//   console.log(day);
+// });
+
+// 9 Вывести таблицу умножения для всех чисел от 2 до 9. Каждое число необходимо умножить на числа от 1 до 10.
+
+for (let i = 2; i <= 9; i++) {
+  for (let k = 1; k <= 10; k++) {
+    // console.log(`${i} * ${k} = ${k * i}`);
+  }
+}
+
+// 10 Игра «Угадай число». Предложить пользователю загадать число от 0 до 100 и отгадать его следующим способом: каждую итерацию цикла делите диапазон чисел пополам, записываете результат в N и спрашиваете у пользователя «Ваше число > N, < N или == N?». В зависимости от того, что указал пользователь, уменьшаете диапазон. Начальный диапазон от 0 до 100, поделили пополам и получили 50. Если пользователь указал, что его число > 50, то изменили диапазон на от 51 до 100. И так до тех пор, пока пользователь не выберет == N.
+
+const guessNumberButton = document.querySelector('.guess-number__button');
+const guessNumberText = document.querySelector('.guess-number__text');
+const guessNumberLabelSpans = document.querySelectorAll(
+  '.guess-number__label-span'
+);
+const guessNumberInputs = document.querySelectorAll('.guess-number__input');
+
+guessNumberButton.onclick = function (e) {
+  e.preventDefault();
+
+  let max = 100;
+  let mid = 50;
+  let min = 0;
+  let checked;
+
+  mid = Math.floor(min + (max - min) / 2);
+
+  suggestNumber();
+  getChecked();
+  changeButtonText();
+
+  if (checked === 0) {
+    min = mid;
+    guessNumberText.textContent = ` min ${min}, max ${max}`;
+  } else if (checked === 1) {
+    max = mid;
+    guessNumberText.textContent = ` min ${min}, max ${max}`;
+  } else {
+    guessNumberText.textContent = ` Вы загадали ${checked.value}`;
+  }
+
+  function changeButtonText() {
+    guessNumberButton.textContent = 'Еще разок';
+  }
+
+  function suggestNumber() {
+    for (let item of guessNumberLabelSpans) {
+      item.textContent = mid;
     }
   }
 
-  function checkNonExistentDay() {
-    if (day > 6) day = 0;
+  function getChecked() {
+    for (let i = 0; i < guessNumberInputs.length; i++) {
+      if (guessNumberInputs[i].checked) {
+        checked = i;
+      }
+    }
+    return checked;
   }
-
-  getDay();
-
-  askDay = confirm(`День недели ${day}. Хотите увидеть следующий день?`);
-  if (askDay) {
-    getDay();
-  }
-  console.log(day);
-});
+};
