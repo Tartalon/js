@@ -76,3 +76,17 @@ function perfectNumbers(min, max) {
   }
 }
 perfectNumbers(2, 500);
+
+// 7 ====================
+// Написать функцию, которая принимает время (часы, минуты, секунды) и выводит его на экран в формате «чч:мм:сс».Если при вызове функции минуты и/или секунды не были переданы, то выводить их как 00.
+
+function displayTime(h, m, s) {
+  let hour = h,
+    minutes = m,
+    seconds = s;
+
+  if (!m) minutes = '00';
+  if (!s) seconds = '00';
+
+  return `Time is: ${hour}:${minutes}:${seconds}`;
+}
