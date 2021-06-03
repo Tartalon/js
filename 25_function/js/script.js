@@ -69,13 +69,15 @@ function checkPerfectNumber(x) {
 // Написать функцию, которая принимает минимальное и максимальное значения для диапазона, и выводит только те числа из диапазона, которые являются совершенными. Используйте написанную ранее функцию, чтобы узнавать, совершенное число или нет.
 
 function perfectNumbers(min, max) {
+  let res = '';
   for (let i = min; i <= max; i++) {
     if (checkPerfectNumber(i)) {
-      console.log(i);
+      res += `${i} `;
     }
   }
+  return res;
 }
-perfectNumbers(2, 500);
+// console.log(perfectNumbers(2, 500));
 
 // 7 ====================
 // Написать функцию, которая принимает время (часы, минуты, секунды) и выводит его на экран в формате «чч:мм:сс».Если при вызове функции минуты и/или секунды не были переданы, то выводить их как 00.
@@ -90,3 +92,45 @@ function displayTime(h, m, s) {
 
   return `Time is: ${hour}:${minutes}:${seconds}`;
 }
+
+// 8 =====================
+// Написать функцию, которая принимает часы, минуты и секунды и возвращает это время в секундах.
+function getTimeInSeconds(h, m, s) {
+  return (h * 60 + m) * 60 + s;
+}
+// console.log(getTimeInSeconds(2, 35, 10));
+
+// 9 =====================
+// Написать функцию, которая принимает количество секунд, переводит их в часы, минуты и секунды и возвращает в виде строки «чч:мм:сс».
+function getSecondsInTime(s) {
+  let hour = Math.floor(s / 3600) % 24;
+  let sec = s % 60;
+  let min = Math.round(s / 60) % 60;
+
+  if (hour < 10) hour = '0' + hour;
+  if (min < 10) min = '0' + min;
+  if (sec < 10) sec = '0' + sec;
+
+  return `Time is: ${hour}:${min}:${sec}`;
+}
+// console.log(getSecondsInTime(5326));
+
+// 10 ====================
+// Написать функцию, которая считает разницу между датами. Функция принимает 6 параметров, которые описывают 2 даты, и возвращает результат в виде строки «чч:мм:сс». При выполнении задания используйте функции из предыдущих 2-х заданий: сначала обе даты переведите в секунды, узнайте разницу в секундах, а потом разницу переведите обратно в «чч:мм:сс»
+
+function getTimeDifference(h1, m1, s1, h2, m2, s2) {
+  const firstTime = getTimeInSeconds(h1, m1, s1);
+  const secondTime = getTimeInSeconds(h2, m2, s2);
+  let difference;
+
+  if (firstTime === secondTime) {
+    return (difference = 0);
+  } else if (firstTime > secondTime) {
+    difference = firstTime - secondTime;
+  } else {
+    difference = secondTime - firstTime;
+  }
+
+  return getSecondsInTime(difference);
+}
+// console.log(getTimeDifference(23, 35, 40, 12, 20, 55));
