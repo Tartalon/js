@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  padding: 0 15px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+}
+
+.section__title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.products__buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.products-button {
+  padding: 10px 5px;
+  margin-right: 20px;
+}
+
+.products-button:last-child {
+  margin-right: 0;
+}
