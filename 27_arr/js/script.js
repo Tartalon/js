@@ -38,24 +38,14 @@ let shoppingList = [
 productsAll.addEventListener('click', e => {
   e.preventDefault();
 
+  sortByBought();
   for (let i = 0; i < shoppingList.length; i++) {
     const product = shoppingList[i];
 
-    productsList.insertAdjacentHTML(
-      'beforeend',
-      `<li clas="list__item">
-        <ul class="product__fields">
-          <li class="fields__text">
-            Product name: ${product.productsName}
-          </li>
-          <li class="fields__text">
-            Quantity: ${product.quantity}
-          </li>
-          <li class="fields__text">
-            ${product.bought}
-          </li>
-        </ul>
-      </li>`
-    );
+    productsList.insertAdjacentHTML('beforeend');
+  }
+
+  function sortByBought() {
+    return shoppingList.sort((a, b) => (a.bought > b.bought ? 1 : -1));
   }
 });
