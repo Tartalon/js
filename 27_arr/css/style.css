@@ -26,6 +26,7 @@ body {
 .products__buttons {
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .products-button {
@@ -35,4 +36,28 @@ body {
 
 .products-button:last-child {
   margin-right: 0;
+}
+
+.products__list {
+  border: 1px solid black;
+  padding: 15px;
+}
+
+.product__list-inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product__span {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  max-width: 33%;
+  padding: 5px;
+}
+
+.product__quantity {
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  justify-content: center;
 }
