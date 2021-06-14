@@ -8,10 +8,10 @@
 
 const sectionProducts = document.querySelector('.section__products');
 const productsAll = document.querySelector('.products__all');
-const productsAdding = document.querySelector('.products__adding');
 const productsBuy = document.querySelector('.products__buy');
 const productsList = document.querySelector('.products__list');
-
+const formAddingInput = document.querySelector('.form-adding__input');
+const formAddingButton = document.querySelector('.form-adding__button');
 let shoppingList = [
   {
     productsName: 'apple',
@@ -41,11 +41,37 @@ productsAll.addEventListener('click', e => {
   sortByBought();
   for (let i = 0; i < shoppingList.length; i++) {
     const product = shoppingList[i];
+    const bought = product.bought === true ? 'Yes' : 'No';
 
-    productsList.insertAdjacentHTML('beforeend');
-  }
-
-  function sortByBought() {
-    return shoppingList.sort((a, b) => (a.bought > b.bought ? 1 : -1));
+    productsList.insertAdjacentHTML(
+      'beforeend',
+      `<p class="product__list-inner">
+        <span class="product__title product__span">${product.productsName}</span>
+        <span class="product__quantity product__span">${product.quantity}</span>
+        <span class="product__bought product__span">${bought}</span>
+      </p>`
+    );
   }
 });
+
+formAddingButton.addEventListener('click', e => {
+  e.preventDefault();
+
+  addProduct();
+  sortByBought();
+});
+
+function addProduct() {
+  const inputValue = formAddingInput.value;
+  shoppingList.push({
+    productsName: inputValue,
+    quantity: 0,
+    bought: false,
+  });
+  sortByBought();
+  console.log(shoppingList);
+}
+
+function sortByBought() {
+  return shoppingList.sort((a, b) => (a.bought > b.bought ? 1 : -1));
+}

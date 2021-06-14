@@ -16,14 +16,22 @@
       <h2 class="section__title">Products</h2>
       <form class="products__buttons">
         <button class="products-button products__all">See all products</button>
-        <button class="products-button products__adding">Add products</button>
+        <!-- <button class="products-button products__adding">Add products</button> -->
         <button class="products-button products__buy">Buy products</button>
+      </form>
+      <form class="form-adding__products">
+        <input
+          class="form-adding__input"
+          type="text"
+          placeholder="Input product name"
+        />
+        <button class="form-adding__button products-button">Add</button>
       </form>
       <div class="products__list">
         <p class="product__list-inner">
           <span class="product__title product__span">Produc name:</span>
-          <span class="product__quantity product__span">0</span>
-          <span class="product__bought product__span">bought:</span>
+          <span class="product__quantity product__span">Quantity</span>
+          <span class="product__bought product__span">Bought</span>
         </p>
       </div>
     </section>
