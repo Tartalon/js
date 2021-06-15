@@ -10,6 +10,7 @@ const sectionProducts = document.querySelector('.section__products');
 const productsAll = document.querySelector('.products__all');
 const productsBuy = document.querySelector('.products__buy');
 const productsList = document.querySelector('.products__list');
+const productsWrapper = document.querySelector('.products__wrapper');
 const productListInner = document.querySelector('.product__list-inner');
 const formAddingInput = document.querySelector('.form-adding__input');
 const formAddingButton = document.querySelector('.form-adding__button');
@@ -37,37 +38,34 @@ let shoppingList = [
   },
 ];
 
-productsAll.addEventListener('click', e => {
+productsAll.addEventListener('click', (e) => {
   e.preventDefault();
 
   sortByBought();
   showProducts();
 });
 
-formAddingButton.addEventListener('click', e => {
+formAddingButton.addEventListener('click', (e) => {
   e.preventDefault();
 
   addProduct();
   sortByBought();
-  showProducts();
 });
 
 function showProducts() {
-  if (productListInner != null) {
-    productListInner.textContent = '';
-  }
+  productsWrapper.textContent = '';
 
   for (let i = 0; i < shoppingList.length; i++) {
     const product = shoppingList[i];
     const bought = product.bought === true ? 'Yes' : 'No';
     const quantity = 0;
 
-    productsList.insertAdjacentHTML(
+    productsWrapper.insertAdjacentHTML(
       'beforeend',
       `<div class="product__list-inner">
-        <span class="product__title product__span">${product.productsName}</span>
-        <span class="product__quantity product__span">${product.quantity}</span>
-        <div class="product__bought product__span">
+          <span class="product__title product__span">${product.productsName}</span>
+          <span class="product__quantity product__span">${product.quantity}</span>
+          <div class="product__bought product__span">
           <span class="bought-span">${bought}</span>
           <button class="product-buy products-button">Buy</button>
         </div>
@@ -87,6 +85,18 @@ function addProduct() {
       bought: false,
     });
   }
+
+  productsWrapper.insertAdjacentHTML(
+    'afterbegin',
+    `<div class="product__list-inner">
+          <span class="product__title product__span">${inputValue}</span>
+          <span class="product__quantity product__span">1</span>
+          <div class="product__bought product__span">
+          <span class="bought-span">no</span>
+          <button class="product-buy products-button">Buy</button>
+        </div>
+      </div>`
+  );
 
   sortByBought();
   clearInput();
