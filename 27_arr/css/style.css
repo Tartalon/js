@@ -52,9 +52,17 @@ body {
   padding: 15px;
 }
 
+.products__titles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .product__list-inner {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  border-top: 1px dashed black;
 }
 
 .product__span {
@@ -65,12 +73,18 @@ body {
   padding: 5px;
 }
 
+.bought-span {
+  width: 100%;
+  max-width: 35%;
+}
+
 .product__quantity {
-  border-right: 1px solid black;
-  border-left: 1px solid black;
+  border-right: 1px dashed black;
+  border-left: 1px dashed black;
   justify-content: center;
 }
 
 .product__bought {
   justify-content: center;
+  align-items: center;
 }

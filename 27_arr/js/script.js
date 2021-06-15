@@ -10,27 +10,29 @@ const sectionProducts = document.querySelector('.section__products');
 const productsAll = document.querySelector('.products__all');
 const productsBuy = document.querySelector('.products__buy');
 const productsList = document.querySelector('.products__list');
+const productListInner = document.querySelector('.product__list-inner');
 const formAddingInput = document.querySelector('.form-adding__input');
 const formAddingButton = document.querySelector('.form-adding__button');
+
 let shoppingList = [
   {
     productsName: 'apple',
-    quantity: 0,
+    quantity: 1,
     bought: false,
   },
   {
     productsName: 'pear',
-    quantity: 0,
+    quantity: 1,
     bought: false,
   },
   {
     productsName: 'carrot',
-    quantity: 0,
+    quantity: 1,
     bought: true,
   },
   {
     productsName: 'melon',
-    quantity: 0,
+    quantity: 1,
     bought: false,
   },
 ];
@@ -39,19 +41,7 @@ productsAll.addEventListener('click', e => {
   e.preventDefault();
 
   sortByBought();
-  for (let i = 0; i < shoppingList.length; i++) {
-    const product = shoppingList[i];
-    const bought = product.bought === true ? 'Yes' : 'No';
-
-    productsList.insertAdjacentHTML(
-      'beforeend',
-      `<p class="product__list-inner">
-        <span class="product__title product__span">${product.productsName}</span>
-        <span class="product__quantity product__span">${product.quantity}</span>
-        <span class="product__bought product__span">${bought}</span>
-      </p>`
-    );
-  }
+  showProducts();
 });
 
 formAddingButton.addEventListener('click', e => {
@@ -59,19 +49,54 @@ formAddingButton.addEventListener('click', e => {
 
   addProduct();
   sortByBought();
+  showProducts();
 });
+
+function showProducts() {
+  if (productListInner != null) {
+    productListInner.textContent = '';
+  }
+
+  for (let i = 0; i < shoppingList.length; i++) {
+    const product = shoppingList[i];
+    const bought = product.bought === true ? 'Yes' : 'No';
+    const quantity = 0;
+
+    productsList.insertAdjacentHTML(
+      'beforeend',
+      `<div class="product__list-inner">
+        <span class="product__title product__span">${product.productsName}</span>
+        <span class="product__quantity product__span">${product.quantity}</span>
+        <div class="product__bought product__span">
+          <span class="bought-span">${bought}</span>
+          <button class="product-buy products-button">Buy</button>
+        </div>
+      </div>`
+    );
+  }
+}
 
 function addProduct() {
   const inputValue = formAddingInput.value;
-  shoppingList.push({
-    productsName: inputValue,
-    quantity: 0,
-    bought: false,
-  });
+  if (inputValue === '') {
+    return;
+  } else {
+    shoppingList.push({
+      productsName: inputValue,
+      quantity: 1,
+      bought: false,
+    });
+  }
+
   sortByBought();
+  clearInput();
   console.log(shoppingList);
 }
 
 function sortByBought() {
   return shoppingList.sort((a, b) => (a.bought > b.bought ? 1 : -1));
+}
+
+function clearInput() {
+  formAddingInput.value = '';
 }
