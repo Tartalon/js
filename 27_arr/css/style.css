@@ -47,7 +47,7 @@ body {
   padding: 5px 7px;
 }
 
-.products__list {
+.products__wrapper {
   border: 1px solid black;
   padding: 15px;
 }

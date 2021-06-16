@@ -38,14 +38,14 @@ let shoppingList = [
   },
 ];
 
-productsAll.addEventListener('click', (e) => {
+productsAll.addEventListener('click', e => {
   e.preventDefault();
 
   sortByBought();
   showProducts();
 });
 
-formAddingButton.addEventListener('click', (e) => {
+formAddingButton.addEventListener('click', e => {
   e.preventDefault();
 
   addProduct();
@@ -53,14 +53,14 @@ formAddingButton.addEventListener('click', (e) => {
 });
 
 function showProducts() {
-  productsWrapper.textContent = '';
+  productsList.textContent = '';
 
   for (let i = 0; i < shoppingList.length; i++) {
     const product = shoppingList[i];
     const bought = product.bought === true ? 'Yes' : 'No';
     const quantity = 0;
 
-    productsWrapper.insertAdjacentHTML(
+    productsList.insertAdjacentHTML(
       'beforeend',
       `<div class="product__list-inner">
           <span class="product__title product__span">${product.productsName}</span>
@@ -76,31 +76,36 @@ function showProducts() {
 
 function addProduct() {
   const inputValue = formAddingInput.value;
+  let newProduct;
+
   if (inputValue === '') {
     return;
   } else {
-    shoppingList.push({
+    newProduct = {
       productsName: inputValue,
       quantity: 1,
       bought: false,
-    });
+    };
   }
 
-  productsWrapper.insertAdjacentHTML(
-    'afterbegin',
-    `<div class="product__list-inner">
-          <span class="product__title product__span">${inputValue}</span>
-          <span class="product__quantity product__span">1</span>
-          <div class="product__bought product__span">
-          <span class="bought-span">no</span>
-          <button class="product-buy products-button">Buy</button>
-        </div>
-      </div>`
-  );
+  shoppingList.push(newProduct);
+  const bought = newProduct.bought === true ? 'Yes' : 'No';
 
   sortByBought();
+
+  productsList.insertAdjacentHTML(
+    'afterbegin',
+    `<li class="product__list-inner">
+          <span class="product__title product__span">${newProduct.productsName}</span>
+          <span class="product__quantity product__span">${newProduct.quantity}</span>
+          <div class="product__bought product__span">
+          <span class="bought-span">${bought}</span>
+          <button class="product-buy products-button">Buy</button>
+        </div>
+      </li>`
+  );
+
   clearInput();
-  console.log(shoppingList);
 }
 
 function sortByBought() {
