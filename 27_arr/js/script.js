@@ -6,14 +6,12 @@
 // Добавление покупки в список. Учтите, что при добавлении покупки с уже существующим в списке продуктом, необходимо увеличивать количество в существующей покупке, а не добавлять новую.
 // Покупка продукта. Функция принимает название продукта и отмечает его как купленный
 
-const sectionProducts = document.querySelector('.section__products');
 const productsAll = document.querySelector('.products__all');
 const productsBuy = document.querySelector('.products__buy');
 const productsList = document.querySelector('.products__list');
-const productsWrapper = document.querySelector('.products__wrapper');
-const productListInner = document.querySelector('.product__list-inner');
 const formAddingInput = document.querySelector('.form-adding__input');
 const formAddingButton = document.querySelector('.form-adding__button');
+const productBuy = document.querySelector('.product-buy');
 
 let shoppingList = [
   {
@@ -43,6 +41,7 @@ productsAll.addEventListener('click', e => {
 
   sortByBought();
   showProducts();
+  bought();
 });
 
 formAddingButton.addEventListener('click', e => {
@@ -62,14 +61,14 @@ function showProducts() {
 
     productsList.insertAdjacentHTML(
       'beforeend',
-      `<div class="product__list-inner">
+      `<li class="product__list-inner">
           <span class="product__title product__span">${product.productsName}</span>
           <span class="product__quantity product__span">${product.quantity}</span>
           <div class="product__bought product__span">
           <span class="bought-span">${bought}</span>
           <button class="product-buy products-button">Buy</button>
         </div>
-      </div>`
+      </li>`
     );
   }
 }
@@ -114,4 +113,10 @@ function sortByBought() {
 
 function clearInput() {
   formAddingInput.value = '';
+}
+
+function bought() {
+  productBuy.addEventListener('click', e => {
+    console.log(e.target);
+  });
 }
