@@ -9,23 +9,23 @@
 Для навигации по DOM использовать методы, которые возвращают только элементы
 */
 
-const head = document.querySelector("head");
+const head = document.querySelector('head');
 const body = document.body;
 const firstDiv = document.body.firstElementChild;
 const div = firstDiv.children;
 
-console.log(head);
-console.log(firstDiv);
-console.log(body.children);
-console.log(firstDiv.children);
-console.log(div);
+// console.log(head);
+// console.log(firstDiv);
+// console.log(body.children);
+// console.log(firstDiv.children);
+// console.log(div);
 
 let filtered = [...firstDiv.children].filter(
-  (child) =>
+  child =>
     child !== firstDiv.firstElementChild && child !== firstDiv.lastElementChild
 );
 
-console.log(filtered);
+// console.log(filtered);
 
 // 2=================
 /*
