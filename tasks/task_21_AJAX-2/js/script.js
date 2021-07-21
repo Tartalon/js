@@ -13,7 +13,6 @@ const apiURL = 'https://jsonplaceholder.typicode.com';
 function getUsers(cb) {
   const xhr = new XMLHttpRequest();
   xhr.open('GET', `${apiURL}/users`);
-
   xhr.addEventListener('load', () => {
     const response = JSON.parse(xhr.responseText);
     cb(response);
@@ -29,11 +28,17 @@ function getUsers(cb) {
 function createUser(body, cb) {
   const xhr = new XMLHttpRequest();
   xhr.open('POST', `${apiURL}/users`);
-
   xhr.addEventListener('load', () => {
     const response = JSON.parse(xhr.responseText);
     cb(response);
   });
+
+  xhr.setRequestHeader('Content-type', 'application/json; charset=UTF-8');
+  xhr.addEventListener('error', () => {
+    console.log('Error');
+  });
+
+  xhr.send(JSON.stringify(body));
 }
 
 function cardTemplate(user) {
@@ -55,5 +60,25 @@ function renderUsers(response) {
     out.insertAdjacentHTML('afterbegin', cardTemplate(user));
   });
 }
+
+submit.addEventListener('click', e => {
+  e.preventDefault();
+  const inpName = document.querySelector('.input-name');
+  const inpEmail = document.querySelector('.input-email');
+  const inpTel = document.querySelector('.input-tel');
+  const inpWebsite = document.querySelector('.inpu-website');
+
+  const newUser = {
+    name: inpName.value,
+    email: inpEmail.value,
+    phone: inpTel.value,
+    website: inpWebsite.value,
+  };
+  createUser(newUser, response => {
+    const card = cardTemplate(response);
+    console.log(card);
+    out.insertAdjacentHTML('afterbegin', card);
+  });
+});
 
 getUsers(renderUsers);
