@@ -8,35 +8,24 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <header class="header">
-      <h1 class="header__title">ARRAYS</h1>
-    </header>
-
-    <section class="section__products">
-      <h2 class="section__title">Products</h2>
-      <form class="products__buttons">
-        <button class="products-button products__all">See all products</button>
-        <!-- <button class="products-button products__adding">Add products</button> -->
-        <button class="products-button products__buy">Buy products</button>
-      </form>
-      <form class="form-adding__products">
+    <div class="container">
+      <h1 class="title">Products</h1>
+      <form>
         <input
-          class="form-adding__input"
           type="text"
-          placeholder="Input product name"
+          class="product__input"
+          placeholder="Name of product"
         />
-        <button class="form-adding__button products-button">Add</button>
+        <button class="product__add" type="submit">Add the product</button>
       </form>
+
       <div class="products__wrapper">
-        <p class="products__titles">
-          <span class="product__title product__span">Produc name</span>
-          <span class="product__quantity product__span">Quantity</span>
-          <span class="product__bought product__span">Bought</span>
-        </p>
         <ul class="products__list"></ul>
       </div>
-    </section>
-    <!-- /.section__products -->
+      <!-- /.products__wrapper -->
+      <button class="products__all" type="button">Show all products</button>
+    </div>
+    <!-- /.container -->
 
     <script src="./js/script.js"></script>
   </body>
