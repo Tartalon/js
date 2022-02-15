@@ -15,12 +15,11 @@ class Point {
 	}
 
 	position() {
-		console.log(`Current point position X: ${this.x}; Y: ${this.y}`);
+		return `Current point position X: ${this.x}; Y: ${this.y}`;
 	}
 }
 
 let p = new Point(3, 5);
-p.position();
 
 const out1 = document.querySelector('.out_1');
 const out2 = document.querySelector('.out_2');
@@ -52,14 +51,43 @@ class RefuelingMarker extends Marker {
 }
 
 let a = new Marker('red', 5);
-a.printWhileInk(
-	"A: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
-	out1
-);
+// a.printWhileInk(
+// 	"A: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+// 	out1
+// );
 
 let b = new RefuelingMarker('green', 4, 6);
 b.refueling();
-b.printWhileInk(
-	"B: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
-	out2
-);
+// b.printWhileInk(
+// 	"B: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+// 	out2
+// );
+
+// =============== 3 =============
+
+const emloyeesWrapper = document.querySelector('.emloyees__wrapper');
+
+class Employee {
+	constructor(name, age, position, salary) {
+		this.name = name;
+		this.age = age;
+		this.position = position;
+		this.salary = salary;
+	}
+}
+
+const emploeesArr = [
+	new Employee('Johne', 23, 'cashier', 1200),
+	new Employee('Marta', 30, 'sales manager', 2000),
+	new Employee('Igor', 28, 'credit manager', 2200),
+	new Employee('Natasha', 27, 'senior cashier', 1700),
+	new Employee('Marti', 34, 'director', 4000),
+];
+
+class EmpTable {
+	constructor(employee) {
+		this.employee = employee;
+	}
+
+	getHtml() {}
+}

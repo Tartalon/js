@@ -1,0 +1,11 @@
+.employees__table {
+	width: 420px;
+}
+
+th {
+	border: 2px solid black;
+}
+
+td {
+	border: 1px solid #aaa;
+}
