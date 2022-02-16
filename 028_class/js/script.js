@@ -65,7 +65,7 @@ b.refueling();
 
 // =============== 3 =============
 
-const emloyeesWrapper = document.querySelector('.emloyees__wrapper');
+const employeesWrapper = document.querySelector('.employees__wrapper');
 
 class Employee {
 	constructor(name, age, position, salary) {
@@ -85,9 +85,39 @@ const emploeesArr = [
 ];
 
 class EmpTable {
-	constructor(employee) {
-		this.employee = employee;
+	constructor(employees) {
+		this.employees = employees;
 	}
 
-	getHtml() {}
+	getHtml() {
+		const table = document.createElement('table');
+		table.classList.add('employees__table');
+
+		const trTitles = document.createElement('tr');
+		trTitles.classList.add('employees__titles');
+		const titles = Object.keys(this.employees[0]);
+
+		for (let i = 0; i < titles.length; i++) {
+			const thTitle = document.createElement('th');
+			thTitle.textContent = titles[i];
+			trTitles.append(thTitle);
+		}
+
+		table.append(trTitles);
+
+		for (const employee of this.employees) {
+			const trEmployee = document.createElement('tr');
+			for (const key in employee) {
+				const td = document.createElement('td');
+				td.textContent = employee[key];
+				trEmployee.append(td);
+			}
+			table.append(trEmployee);
+		}
+
+		employeesWrapper.append(table);
+	}
 }
+
+const f = new EmpTable(emploeesArr);
+f.getHtml();
